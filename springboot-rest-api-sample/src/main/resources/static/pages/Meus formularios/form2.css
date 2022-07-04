@@ -1,0 +1,66 @@
+*{
+margin: 12;
+padding: 8;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+background-image: url(wat.jpg);
+}
+
+.box{
+    background-color: rgb(28, 96, 184);
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    
+}
+
+.genero{
+    text-align:center;
+}
+#submit{
+    color: white;
+    background-image: linear-gradient(to left, rgb(47, 24, 179), rgb(100, 89, 204));
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+}
+#submit:hover{
+    background-image: linear-gradient(to right, rgb(47, 24, 179), rgb(100, 89, 204));
+}
+.texto{
+    border-radius: 8px;
+}
+fieldset{
+    color: white;
+    border: 2px solid rgb(32, 30, 173);
+    border-radius: 8px;
+}
+legend{
+border: 2px solid rgb(76, 67, 211);
+background-image: linear-gradient(to left, rgb(46, 62, 202), rgb(189, 185, 224));
+border-radius: 6px;
+padding: 9px;
+}
+
+
+        .texto{
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;   
+            width: 100%;
+            letter-spacing: 2px;
+        }
+        
+        #check{
+            background: none;
+        }

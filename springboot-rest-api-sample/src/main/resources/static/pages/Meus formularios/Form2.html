@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="form2.css" media="screen">
+    <script>
+        function checkForm() {
+
+    var nome = document.getElementById("nome").value;
+    var email = document.getElementById("email").value;
+    var fone = document.getElementById("telefone").value;
+    var cpf = document.getElementById("cpf").value;
+    var hidden = document.getElementById("hndEnvia").value;
+
+    if (nome == '' || email == '' || fone == '' || cpf == '') {
+        alert("Por favor preencha todos os campos.");
+    } else {
+        if (name.innerHTML == 'Nome' || email.innerHTML == 'E-mail' || telefone.innerHTML == 'Telefone' || cpf.innerHTML == 'cpf') {
+            alert("Por favor, preencha o formul&aacute;rio com informa&ccedil;&otilde;es v&aacute;lidas");
+        } else {
+            hidden==
+
+            document.getElementById("myForm").submit();
+        }
+    }
+}
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <div>
+        <fieldset>
+            <legend>
+                Dados Iniciais
+            </legend>
+            <br>
+            <div>
+                    <label>Nome:</label>
+                    <input class="texto" type="text" name="nome" id="nome" required><br>
+                    <br>
+                    <label class="label">Email:</label>
+                    <input class="texto" type="email" name="email" id="email" required><br>
+                    <br>
+                    <label class="label">Senha:</label>
+                    <input class="texto" type="password" name="senha" id="senha" required><br>
+                    <br>
+                    <label class="label">CPF:</label>
+                    <input class="texto" type="text" name="cpf" id="cpf" required><br>  
+                    <br>
+                    <label>Data de Nascimento:</label>
+                    <input type="date" name="data" id="data" required><br>  
+                    <br>
+                    <div class="genero">        
+                    <label>Selecione seu Genero:</label><br>
+                    <input type="radio" name="radio" id="masc" value="Masculino">
+                    <label for="masc">Masculino</label><br>
+                      <input type="radio" name="radio" id="fem" value="Masculino">
+                    <label for="fem">Feminino</label><br>
+                      <input type="radio" name="radio" id="outro" value="Feminino">
+                    <label for="outro">Outro</label><br>
+                    <br>
+                    <label>Oque voce deseja comer?</label><br><br>
+                    <input type="checkbox" name="check" id="check" value="check">
+                    <label>Pizza</label><br>
+                    <input type="checkbox" name="check" id="check" value="check">
+                    <label>Hamburguer</label><br>
+                    <input type="checkbox" name="check" id="check" value="check">
+                    <label>Salada</label><br>
+                    <input type="checkbox" name="check" id="check" value="check">
+                    <label>Macarrão</label><br>
+                    <input type="checkbox" name="check" id="check" value="check">
+                    <label>Prato Feito</label><br>
+                    <br>
+                    <input type="button" name="verifica" id="verifica" value="Verificar Campos" onclick="checkForm"><br>   
+                    <input type="hidden" name="hndEnvia" id="hndEnvia" value="0">
+                    <br>    
+                </div>
+        </fieldset>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" type="text/css" href="Meu formulario.css" media="screen">
+<div class="titulo">
+<h1 id="titulo">
+    <form action="Meu formulario" method="get">
+    <form>
+    <Label>
+        Cadastro 
+    </Label>
+</h1>
+</div>
+<body>
+    <div class="box">
+    <div>
+
+ <br>
+       <fieldset>
+           <legend>Dados pessoais</legend><br>
+           <label class="labelInput" >Nome:</label>
+           <input type="text" name="nome" class="inputUser" placeholder="Insira seu Nome" id="nome"required><br><br>
+           <label class="labelInput" >Email:</label>
+           <input type="email" name="email" class="inputUser" placeholder="Insira seu Email" id="email"required><br><br>
+           <label class="labelInput" >Sobrenome:</label>
+           <input type="text" name="sobrenome" class="inputUser" placeholder="Insira seu Sobrenome" id="sobrenome"required><br><br>
+           <label class="labelInput" >CPF:</label>
+           <input type="text" name="cpf" class="inputUser" placeholder="Insira seu CPF" id="cpf" required><br><br>
+       </fieldset>
+    </div>
+    <br>
+    <div class="cartao">
+        <fieldset>
+            <legend>Preencha os Dados do Cartão</legend><br>
+            <div>
+                <br>
+                <label>Ano da Validade:
+                </label>
+                    <select id="Ano da Validade">
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                </select>
+                </label>
+            </div>
+            <br>
+            <div>
+                <div class="bandeira">
+                    <label>Selecione a Bandeira:</label>
+                    <br>
+                    <label>
+                    <input type="radio" name="cartão" value="master">Mastercard
+                 </label>
+                 <br>
+             <label>
+                    <input type="radio" name="cartão" value="visa">Visa
+                 </label>
+                 <br>
+             <label>
+                    <input type="radio" name="cartão" value="dinners">Dinners
+                 </label>
+                 <br>
+             <label>
+                    <input type="radio" name="cartão" value="hypercard">Hypercard
+                 </label>
+                 <br>
+             <label>
+                    <input type="radio" name="cartão" value="elo">Elo
+                 </label>
+                </div>
+            </div>
+            <br>
+            <div>
+                <label >Ultimos tres digitos do cartão</label><br>
+                    <input type="text" name="digitos" id="dig">
+            </div>
+            <br>
+            <div>
+                <label>
+                <input type="submit" name="button" id="button">
+            </label>
+            </div>
+        </fieldset>
+    </div>
+</div>
+</body>
+</form>
+</html>
