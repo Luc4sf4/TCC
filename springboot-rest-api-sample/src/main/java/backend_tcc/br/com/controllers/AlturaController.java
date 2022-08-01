@@ -20,7 +20,7 @@ import backend_tcc.br.com.repository.AlturaRepository;
 
 
 
-@RequestMapping("altura")
+@RequestMapping("cadastro/altura")
 @RestController
 public class AlturaController {
 

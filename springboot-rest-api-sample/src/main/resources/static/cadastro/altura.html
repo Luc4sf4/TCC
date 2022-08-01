@@ -36,8 +36,8 @@
 		<div class="mb-3">
 
 
-			<label for="Nome" class="form-label">Informe a Altura (ex: 184 cm)</label> <input
-				type="text" class="form-control" id="alturah"
+			<label for="Nome" class="form-label">Informe a Altura (ex:
+				184 cm)</label> <input type="text" class="form-control" id="alturah"
 				placeholder="Infrome a sua altura " required="required">
 		</div>
 
@@ -54,8 +54,7 @@
 	</form>
 
 
-	<button type="button" class="btn btn-primary"
-		onclick="salvarAltura()">Salvar</button>
+	<button type="button" class="btn btn-primary" onclick="salvarAltura()">Salvar</button>
 
 
 	<button type="button" class="btn btn-secondary"
@@ -185,14 +184,10 @@
 
 						$.ajax({
 							   method : "GET",
-							   url : "altura",
-							
+							   url : "altura",				
+								success : function(response) {
 
-											success : function(response) {
-
-												$(
-														'#tabelaResultados > tbody > tr')
-														.remove();
+								$('#tabelaResultados > tbody > tr').remove();
 
 												for (var i = 0; i < response.length; i++) {
 
