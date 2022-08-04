@@ -18,12 +18,11 @@ public class Altura  implements Serializable{
 	
 	@Id
 	@GeneratedValue (strategy =  GenerationType.SEQUENCE, generator = "seq_alt")
-	private Long id;
-
+	private Long id           ;
 	private String description;
-	
-	private String status;
+	private String status     ;
 
+	
 	public Long getId() {
 		return id;
 	}
@@ -32,6 +31,7 @@ public class Altura  implements Serializable{
 		this.id = id;
 	}
 
+	
 	public String getDescription() {
 		return description;
 	}

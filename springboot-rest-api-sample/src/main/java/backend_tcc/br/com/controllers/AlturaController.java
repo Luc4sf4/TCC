@@ -29,33 +29,29 @@ public class AlturaController {
 	
 	@PostMapping
 	@ResponseBody
-	public ResponseEntity<Altura> saveAltura (@RequestBody Altura altu) {
+	public ResponseEntity<Altura> saveHeight (@RequestBody Altura isHeight/*isHeight é a variável de construção */ ) {
 		
-		Altura alt = alturaRepository.save(altu);
-		
-		return new ResponseEntity<Altura>(alt,HttpStatus.CREATED);
+		Altura height = alturaRepository.save(isHeight)                 ;
+		return new ResponseEntity<Altura>(height,HttpStatus.CREATED);
 		
 		
 	}
 	
-	
 	@GetMapping
 	@ResponseBody
-	public ResponseEntity<List<Altura>> getEveryAltura () {
+	public ResponseEntity<List<Altura>> getEveryHeight () {
 		
 		
-		List<Altura> alt = alturaRepository.findAll();
-		
-		return new ResponseEntity<List<Altura>> (alt,HttpStatus.OK);
+		List<Altura> height = alturaRepository.findAll()              ;	
+		return new ResponseEntity<List<Altura>> (height,HttpStatus.OK);
 		
 	}
 	
 	@GetMapping(value = "/id")
 	@ResponseBody
-	public ResponseEntity<Altura> getAlturaId (@RequestParam(name = "id")Long id){
+	public ResponseEntity<Altura> getHeightId (@RequestParam(name = "id")Long id){
 		
-		Altura alt = alturaRepository.findById(id).get();
-		
+		Altura alt = alturaRepository.findById(id).get()     ;	
 		return new ResponseEntity<Altura>(alt, HttpStatus.OK);
 		
 		
@@ -65,35 +61,28 @@ public class AlturaController {
 	
 	@DeleteMapping
 	@ResponseBody
-	public ResponseEntity<String> delteAltura (@RequestParam Long id) {
+	public ResponseEntity<String> delteHeight (@RequestParam Long id) {
 		
 		
-		alturaRepository.deleteById(id);
-		
+		alturaRepository.deleteById(id)													  ;
 		return new ResponseEntity<String> ("Cadastro deletado com sucesso", HttpStatus.OK);
-		
-		
 	}
 	
 	@PutMapping
 	@ResponseBody
-	public ResponseEntity<?> updateAltura(@RequestBody Altura altu) {
+	public ResponseEntity<?> updateHeight(@RequestBody Altura height) {
 		
-		if(altu.getId() == null) {
+		if(height.getId() == null) {
 			
 			return new ResponseEntity<String> (" ID não foi informado para atualização ", HttpStatus.OK);
 			
 		}
 		
-		Altura alt = alturaRepository.saveAndFlush(altu);
-		
-		return new ResponseEntity<Altura>(alt, HttpStatus.OK);
+		Altura heighT = alturaRepository.saveAndFlush(height)     ;
+		return new ResponseEntity<Altura>(heighT, HttpStatus.OK);
 		
 		
 		
 	} 
-	
-	
-	
 	
 }
