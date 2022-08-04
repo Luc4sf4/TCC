@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,72 +18,71 @@ import org.springframework.web.bind.annotation.RestController;
 import backend_tcc.br.com.model.Usuario;
 import backend_tcc.br.com.repository.UsuarioRepository;
 
-
+@RequestMapping("user")
 @RestController
 public class UsuarioController {
 
-	@Autowired /* IC/CD ou CDI - Injeção de dependencia */
-	private UsuarioRepository usuarioRepository;
-
-	@GetMapping(value = "listatodos")
+	@Autowired
+	private UsuarioRepository userRepository;
+	
+	@PostMapping
 	@ResponseBody
-	public ResponseEntity<List<Usuario>> listaUsuario() {
-
-		List<Usuario> usuarios = usuarioRepository.findAll();/* executa a consulta do banco de dados */
-
-		return new ResponseEntity<List<Usuario>>(usuarios, HttpStatus.OK);
-
-	}
-
-	@PostMapping(value = "salvar")
-	@ResponseBody
-	public ResponseEntity<Usuario> salvar(@RequestBody Usuario usuario) /* Recebe os dados para salvar */ {
-
-		Usuario user = usuarioRepository.save(usuario);
-
+	public ResponseEntity<Usuario> SaveUse(@RequestBody Usuario userContructor){
+		
+		
+		Usuario user = userRepository.save(userContructor);
+		
 		return new ResponseEntity<Usuario>(user, HttpStatus.CREATED);
+		
 	}
-
-	@DeleteMapping(value = "delete")
+	
+	@GetMapping
 	@ResponseBody
-	public ResponseEntity<String> delete(@RequestParam Long iduser) /* Recebe os dados para salvar */ {
-
-		usuarioRepository.deleteById(iduser);
-
-		return new ResponseEntity<String>("User deletado com sucesso ", HttpStatus.OK);
+		public ResponseEntity<List<Usuario>> getEveryTurmaProfessor(){
+		List<Usuario> user = userRepository.findAll();
+		
+		return new ResponseEntity<List<Usuario>>(user, HttpStatus.OK);
+		
 	}
-
-	@GetMapping(value = "buscaruserid")
+	
+	
+	@GetMapping(value = "/id")
 	@ResponseBody
-	public ResponseEntity<Usuario> buscaruserid(
-			@RequestParam(name = "iduser") Long iduser) /* Recebe os dados para consultar */ {
-
-		Usuario usuario = usuarioRepository.findById(iduser).get();
-
-		return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
+	public ResponseEntity<Usuario> GetUserId(@RequestParam(name = "id")Long id){
+		
+		Usuario user = userRepository.findById(id).get();
+		
+		return new ResponseEntity<Usuario>(user,HttpStatus.OK);
+		
+		
 	}
-
-	@PutMapping(value = "atualizar")
+	
+	@DeleteMapping
 	@ResponseBody
-	public ResponseEntity<?> atualizar(@RequestBody Usuario usuario) /* Recebe os dados para salvar */ {
-
-		if (usuario.getIdUsuario() == null) {
-			return new ResponseEntity<String>(" Id não foi informado para a atualização ", HttpStatus.OK);
+	public ResponseEntity<String>DeleteUser (@RequestParam Long id) {
+		
+		userRepository.deleteById(id);
+		
+		return new ResponseEntity<String>("Usuario deletado com sucesso",HttpStatus.OK);
+		
+	}
+	
+	@PutMapping
+	@ResponseBody
+	public ResponseEntity<?>UpdateUser(@RequestBody Usuario userContructor){
+		
+		if(userContructor.getId() == null) {
+			
+			return new ResponseEntity<String> ("Id não informado para update", HttpStatus.OK);
+			
 		}
-
-		Usuario user = usuarioRepository.saveAndFlush(usuario);
-
-		return new ResponseEntity<Usuario>(user, HttpStatus.OK);
+		
+		Usuario user = userRepository.saveAndFlush(userContructor);
+		
+		return new ResponseEntity<Usuario>(user,HttpStatus.OK);
 	}
+	
+	
+}	
+	
 
-	@GetMapping(value = "buscarPorNome")
-	@ResponseBody
-	public ResponseEntity<List<Usuario>> buscarPorNome(
-			@RequestParam(name = "name2") String name) /* Recebe os dados para consultar */ {
-
-		List<Usuario> usuario = usuarioRepository.buscarPorNome(name.trim().toUpperCase());
-
-		return new ResponseEntity<List<Usuario>>(usuario, HttpStatus.OK);
-	}
-
-}

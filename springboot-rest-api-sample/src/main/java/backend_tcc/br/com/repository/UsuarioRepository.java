@@ -12,7 +12,7 @@ import backend_tcc.br.com.model.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
-	@Query (value = "select u from Usuario u where upper(trim(u.nivelAcesso)) like %?1%")
+	@Query (value = "select u from Usuario u where upper(trim(u.emailDescription)) like %?1%")
 	List<Usuario> buscarPorNome(String nivelAcesso );
 
 }
