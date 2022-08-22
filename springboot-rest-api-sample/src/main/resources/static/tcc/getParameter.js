@@ -1,17 +1,9 @@
 jQuery(document).ready(function() {
 
-
-
-
-
-
-});
-
-function getParametros(idParametro){
-		$.ajax({
+	$.ajax({
 		method: "GET",
 		url: "http://localhost:8081/api/parametros/id",
-		data: "id=" + idParametro,
+		data: "id=" + 3,
 		success: function(response) {
 			console.log(response);
 
@@ -26,6 +18,12 @@ function getParametros(idParametro){
 		alert("Erro ao Buscar Usuario por id: " + xhr.reponseText);
 
 	});
-}
+
+
+
+
+});
+
+
 
 

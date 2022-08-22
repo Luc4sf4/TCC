@@ -38,7 +38,7 @@ public class UsuarioController {
 	
 	@GetMapping
 	@ResponseBody
-		public ResponseEntity<List<Usuario>> getEveryTurmaProfessor(){
+		public ResponseEntity<List<Usuario>> getEveryUser(){
 		List<Usuario> user = userRepository.findAll();
 		
 		return new ResponseEntity<List<Usuario>>(user, HttpStatus.OK);

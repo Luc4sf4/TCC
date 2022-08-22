@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="home.css" media="screen" />
+<script src="https://code.jquery.com/jquery-3.6.0.js"	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 	crossorigin="anonymous"></script>
+<script src="./getParameter.js"	></script>
+<style>
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px; font-size:12px}
+</style>
+</head>
+<body>
+
+
+
+  <div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="home.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+      <a href="Login.html" class="w3-button w3-black w3-padding-large w3-large">Login</a>
+      <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Categoria</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Fale Conosco</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">Sobre nós <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#" class="w3-bar-item w3-button">Redes Sociais</a>
+          <a href="#" class="w3-bar-item w3-button">Localização</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Content -->
+<div class="w3-content" style="max-width:1500px;margin-top:80px;margin-bottom:80px">
+
+  <div class="w3-panel">
+    <h1 class="localização"><b>E-mporium</b></h1>
+  </div>
+
+
+  <section class="carousel">
+    <input type="radio" name="carousel" id="carousel1" checked="checked" />
+    <input type="radio" name="carousel" id="carousel2" />
+    <input type="radio" name="carousel" id="carousel3" />
+  
+    <main class="carousel__stage">
+      <aside class="carousel__item">
+        <img class="carousel__image" src="imagens/ternos.png" />
+        <label for="carousel2" class="carousel__next carousel__control"></label>
+      </aside>
+  
+      <aside class="carousel__item">
+        <label for="carousel1" class="carousel__prev carousel__control"></label>
+        <img class="carousel__image" src="imagens/camisassociais.png" />
+        <label for="carousel3" class="carousel__next carousel__control"></label>
+      </aside>  
+  
+      <aside class="carousel__item">
+        <label for="carousel2" class="carousel__prev carousel__control"></label>
+        <img class="carousel__image" src="imagens/smokings.png" />
+        <label for="carousel4" class="carousel__next carousel__control"></label>
+      </aside>
+    </main>
+  </section>
+<br></br>
+<br></br>
+
+
+<div class="w3-black" id="tour">
+  <div class="w3-container w3-content w3-padding-64" style="max-width:1000px">
+    <h2 class="localização">Categorias</h2>
+   
+    <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+      <div class="w3-third w3-margin-bottom">
+        <a href="produtos.html?idProduto=1&"><img src="imagens/camisascategorias.png" alt="New York" style="width:100%" class="w3-hover-opacity"></a>
+        <div class="w3-container w3-white">
+          <p><b>Camisas</b></p>
+          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Confira Já!</button>
+        </div>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <a href="produtos.html?idProduto=1&"><img src="imagens/calçascategorias.png" alt="Paris" style="width:100%" class="w3-hover-opacity"></a>
+        <div class="w3-container w3-white">
+          <p><b>Calças</b></p>
+          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Confira Já!</button>
+        </div>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+       <a href="produtos.html?idProduto=1&"> <img src="imagens/ternosparacatergoria.png" alt="San Francisco" style="width:100%" class="w3-hover-opacity"></a>
+        <div class="w3-container w3-white">
+          <p><b>Ternos</b></p>
+          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Confira Já!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w3-container w3-content w3-center w3-adding-64" style="max-width:800px" id="band">
+<h1 class="w3-jumbo w3-hide-small">Coleção de Inverno</h1></div>
+<div class="w3-display-container w3-container">
+  <img src="imagens/Design sem nome.png" alt="Jeans" style="width:100%">
+  <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+    <h1 class="w3-jumbo w3-hide-small"><br></h1><br></h1>
+    <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+    <h1 class="w3-hide-small">Ternos com até 30% de desconto</h1>
+    <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">Compre Aqui</a></p>
+  </div>
+</div>
+
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Algumas de nossas novidades!</h2>
+
+  <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+    <div class="w3-third w3-margin-bottom">
+      <img src="imagens/classic.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>TERNO CLASSIC EXECUTIVO PRETO LISO</b></p>
+        <p class="w3-opacity">Disponivel Em Todas Numerações</p>
+        <p>Sua modelagem clássica slim garante uma silhueta impecável e muita elegância.</p>
+        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Confira!</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="imagens/younger.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>CAMISA YOUNGER UP MANGA LONGA COM ELASTANO AZUL ROYAL</b></p>
+        <p class="w3-opacity">Disponivel Em Todas Numerações</p>
+        <p>Conta com um toque gelado e excelente absorção do suor.
+          Possui detalhes no acabamento que enriquecem a peça.</p>
+        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Confira!</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="imagens/poliviscose.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>CALÇA SLIM POLIVISCOSE LONDRES PRETA</b></p>
+        <p class="w3-opacity">Disponivel Em Todas Numerações</p>
+        <p>Tem um toque leve e agradável, devido à viscose e possui toque leve e hiper agradável, e possui forro exclusivo com algodão.</p>
+        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Confira!</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="w3-container w3-content w3-padding-64" style="max-width:1000px"></div>
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+  <h2 class="w3-wide">Produtos em Destaque</h2>
+  <br><br>
+  
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <img src="imagens/blazer.jpg" style="width:100%">
+      <p>Ripped Skinny Jeans<br><b>R$489,00</b></p>
+    </div>
+    <div class="w3-container">
+      <img src="imagens/calça.jpg" style="width:100%">
+      <p>CALÇA SKINNY BEGE<br><b>R$197,00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="imagens/camicami.jpg" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+        </div>
+      </div>
+      <p>CAMISA YOUNGER<br><b>R$179,00</b></p>
+    </div>
+    <div class="w3-container">
+      <img src="imagens/colete.jpg" style="width:100%">
+      <p>COLETE SOCIAL PRETO<br><b>R$168,00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <img src="imagens/gravata.jpg" style="width:100%">
+      <p>GRAVATA PREMIUM<br><b>R$78,00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="imagens/sueter.jpg" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+
+        </div>
+      </div>
+      <p>SUÉTER PRETO<br><b >R$149,90</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <img src="imagens/terno.jpg" style="width:100%">
+      <p>TERNO PREMIUM LISO<br><b>R$499,90</b></p>
+    </div>
+    <div class="w3-container">
+      <img src="imagens/sueter2.jpg" style="width:100%">
+      <p>SUÉTER CINZA CLARO<br><b>R$149,90</b></p>
+    </div>
+  </div>
+</div>
+  <!-- Contact -->
+  <div class="w3-center w3-padding-64" id="contact">
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Fale Conosco</span>
+  </div>
+
+  <form class="w3-container" action="/action_page.php" target="_blank">
+    <div class="w3-section">
+      <label>Name</label>
+      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
+    </div>
+    <div class="w3-section">
+      <label>Email</label>
+      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
+    </div>
+    <div class="w3-section">
+      <label>Subject</label>
+      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
+    </div>
+    <div class="w3-section">
+      <label>Message</label>
+      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
+    </div>
+    <button type="submit" class="w3-button w3-block w3-black">Send</button>
+  </form>
+<br></br>
+  <div class="w3-container w3-black w3-padding-32">
+    <h1>Se Inscreva</h1>
+    <p>Para ser notificado de qualquer novidade!</p>
+
+    <h6><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">Inscreva-Se</button></h6>
+  </div>
+
+</div>
+<br></br> 
+<h1 class="localização">Nossa Localização</h1></div>
+<br></br> 
+<img src="imagens/localization.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+<!-- Footer -->
+
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+  <h4>Footer</h4>
+  <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
+
+<div id="subscribe" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-white">
+      <i onclick="document.getElementById('subscribe').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+      <h2 class="w3-wide">Inscreva-se</h2>
+      <p>Veja nossas novidades na palma da mão!</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Seu E-mail"></p>
+      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Prosseguir</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+<script type="text/javascript">getParametros(3)</script>
+<h1 id="parametro_145" ></h1>
+</body>
+</html>

@@ -18,6 +18,8 @@ import javax.persistence.SequenceGenerator;
 		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario")
 		private Long id;
 		
+		private String name;
+		
 		private String emailDescription;
 		
 		private String passwordDescription;
@@ -54,5 +56,13 @@ import javax.persistence.SequenceGenerator;
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 }

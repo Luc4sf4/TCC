@@ -35,43 +35,34 @@
 
 		<div class="mb-3">
 			<label for="Nome" class="form-label">Nome do usuário</label> <input
-				type="text" class="form-control" id="nome"
-				placeholder="Infrome o nome" required="required"">
+				type="text" class="form-control" id="name"
+				placeholder="Infrome o nome" required="required">
 		</div>
 
 		<div class="mb-3">
-			<label for="Idade" class="form-label">Idade</label> <input
-				type="number" class="form-control" id="idade"
+			<label for="Idade" class="form-label">Informe o email</label> <input
+				type="text" class="form-control" id="email"
 				placeholder="Infrome a sua idade">
 		</div>
+		
 		<div class="mb-3">
-			<label for="sexo">Informe o seu Sexo:</label> <select name="sexo"
-				id="sexo">
-				<option value="1">Masculino</option>
-				<option value="2">Feminino</option>
-				<option value="3">Não-Binário</option>
+			<label for="Nome" class="form-label">Informe a senha</label> <input
+				type="text" class="form-control" id="password"
+				placeholder="Infrome o seu telefone" required="required"">
+		</div>
+		
+		<div class="mb-3">
+			<label for="sexo">Informe o Status:</label> <select name="status"
+				id="status">
+				<option value="1">Ativo</option>
+				<option value="2">Desativado</option>
+				<option value="3">Temporariamente Fora</option>
 				<option value="4">outro</option>
 			</select> <br> <br>
 		</div>
-
-		<div class="mb-3">
-			<label for="Nome" class="form-label">Telefone</label> <input
-				type="text" class="form-control" id="telefone"
-				placeholder="Infrome o seu telefone" required="required"">
-		</div>
-
-
-		<div class="mb-3">
-			<label for="Nome" class="form-label">Informe o seu CPF</label> <input
-				type="text" class="form-control" id="cpf"
-				placeholder="Infrome o seu cpf" required="required"">
-		</div>
-
-
-
 	</div>
 
-	<button type="button" class="btn btn-primary" onclick="salvarUsuario()">Salvar</button>
+	<button type="button" class="btn btn-primary" onclick="saveUser()">Salvar</button>
 	<button type="button" class="btn btn-secondary"
 		onclick="document.getElementById('formCadastroUser').reset();">Novo</button>
 	<button type="button" class="btn btn-danger" data-bs-toggle="modal"
@@ -94,11 +85,11 @@
 					<form>
 						<div class="mb-3">
 							<label for="recipient-name" class="col-form-label">Informe
-								o Nome:</label> <input type="text" class="form-control" id="nameBusca">
+								o Nome:</label> <input type="text" class="form-control" id="name">
 						</div>
 						<div class="mb-3"></div>
 						<button type="button" class="btn btn-success"
-							onclick="pesquisarUser()">Buscar</button>
+							onclick="getUser()">Buscar</button>
 
 					</form>
 
@@ -108,9 +99,8 @@
 								<tr>
 									<th scope="col">ID</th>
 									<th scope="col">Nome</th>
-									<th scope="col">Sexo</th>
-									<th scope="col">Telefone</th>
-									<th scopr="col">CPF</th>
+									<th scope="col">email</th>
+									<th scope="col">senha</th>
 									<th scope="col">Editar</th>
 									<th scope="col">Deletar</th>
 
@@ -159,15 +149,11 @@
  
  function  deleteUser(id) {
 	 if (confirm('Deseja realemente deletar ?')) {
-		 
-		 
-	 
-	 
-	 
+
 	 $.ajax({
 			method: "DELETE",
-			url: "delete",
-			data: "iduser=" + id,
+			url: "user",
+			data: "id=" + id,
 		
 			success: function (response) {
 				
@@ -187,24 +173,24 @@
  }
  
  
- function pesquisarUser(){
+ function getUser(){
  		
- 		var nome  = $('#nameBusca').val();
+ 		var nome  = $('#name').val();
  		
  		if(nome != null && nome.trim() != '') {
  			
  			debugger;
  			$.ajax({
  				method: "GET",
- 				url: "buscarPorNome",
- 				data: "name2=" + nome,
+ 				url: "user/id",
+ 				data: "id="+ nome,
  			
  				success: function (response) {
  					
  					$('#tabelaResultados > tbody > tr').remove();
  					
  					for (var i = 0; i < response.length; i++){
-						$('#tabelaResultados > tbody').append('<tr id="'+response[i].id+'"><td>'+response[i].id+'</td><td>'+response [i].nome+'</td><td>'+response [i].sexo+'</td><td>'+response[i].telefone +'</td><td>'+response[i].cpf +'</td> <td><button type="button" onclick = "colocarEmEdicao('+response[i].id+')" class="btn btn-primary">Ver</button></td><td><button type="button" class="btn btn-danger" onclick = "deleteUser('+response[i].id+')">Deletar</button></td><td></tr>');   
+						$('#tabelaResultados > tbody').append('<tr id="'+response[i].id+'"><td>'+response[i].id+'</td><td>'+response [i].name+'</td><td>'+response [i].emailDescription+'</td><td>'+response[i].passwordDescription +'</td><td>'+response[i].status +'</td> <td><button type="button" onclick = "putInEdition('+response[i].id+')" class="btn btn-primary">Editar</button></td><td><button type="button" class="btn btn-danger" onclick = "deleteUser('+response[i].id+')">Deletar</button></td><td></tr>');   
 						}
  					
  					}
@@ -219,25 +205,23 @@
  
  
  	
- 	function colocarEmEdicao(id){
+ 	function putInEdition(id){
  		$.ajax({
 				method: "GET",
-				url: "buscaruserid",
-				data: "iduser=" + id,
+				url: "user/id",
+				data: "id=" + id,
 			
 				success: function (response) {
 					
 					$("#id").val(response.id);
 			 		
-					$("#nome").val(response.nome);
+					$("#name").val(response.name);
 			 		
-					$("#idade").val(response.idade);
+					$("#email").val(response.emailDescription);
 					
-					$('#sexo').val(response.sexo);
+					$('#password').val(response.passwordDescription);
 					
-					$('#telefone').val(response.telefone);
-					
-					$('#cpf').val(response.cpf);
+					$('#status').val(response.status);
 					
 					$('#modalPesquisarUser').modal('hide');
 					
@@ -251,50 +235,28 @@
  	
  	
  	
- function salvarUsuario() {
+ function saveUser() {
  		
 
-	 	var id =      $('#id').val();
+	 	var id      =   $('#id').val();
  		
- 		var nome =    $('#nome').val();
+ 		var name    =   $('#name').val();
  		
- 		var idade =   $("#idade").val();
+ 		var email   =   $("#email").val();
  		
- 		var sexo =    $('#sexo').val();
+ 		var status  =   $('#status').val();
 			
- 		var telefone= $('#telefone').val();
- 		
- 		var cpfj=      $("#cpf").val();
- 		
-		
-	
- 		if(nome == null || nome != null && nome.trim() == ''){
- 			
- 			$('#nome').focus();
- 			alert ('informe o nome');
- 			return
- 		}
- 		
- 		
- 		if(idade == null || idade != null && idade.trim() == ''){
- 			
- 			$('#idade').focus();
- 			alert('informe a idade'); 
- 			return
- 			
- 		}
- 		
+ 		var password= $('#password').val();	
  	
  			$.ajax({
  				method: "POST",
- 				url: "salvar",
+ 				url: "user",
  				data: JSON.stringify({
  					id : id, 
- 					nome : nome, 
- 					idade : idade, 
- 					sexo:sexo, 
- 					telefone:telefone, 
- 					cpf : cpfj
+ 					name : name, 
+ 					emailDescription : email, 
+ 					passwordDescription:password, 
+ 					status:status
  					}),
  				contentType: "application/json; charset= utf-8",
  				success: function (response) {
