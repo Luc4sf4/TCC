@@ -7,7 +7,7 @@
     <title>Cadastre-se</title>
     <link rel="stylesheet" href="cadastro.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 	crossorigin="anonymous"></script>
-<script src="./getParameter.js"	></script>
+
 </head>
 <body>
     <main>
@@ -28,20 +28,60 @@
                 <span>Senha</span>
                 <input type="password" id="password" name="password">
             </label>
-
+			
             <label for="password">
                 <span>Repita sua senha</span>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password2" name="password">
             </label>
 
-            <input type="submit" value="Sign Up" id="button">
+        <input type="button" value="Sign Up" id="button" onclick = "saveUser()"></input>
+
         </form>
     </main>
     <section class="images">
 
         <div class="circle"></div>
     </section>
-    <script type="text/javascript">getParametros(3)</script>
-<h1 id="parametro_145" ></h1>
+    <script type="text/javascript">
+    
+    function saveUser() {
+    	
+    	
+    	
+    	var name = $("#name").val();
+    	
+    	var email = $("#email").val();
+    	
+    	var password = $("#password").val();
+    	
+    	var password2 = $("#password2").val();
+  		
+    		if(password2 == password){
+    		$.ajax({
+ 				method: "POST",
+ 				url: "user",
+ 				data : JSON.stringify({
+ 					
+ 					name:name,
+ 					emailDescription:email,
+ 					passwordDescription: password ,
+ 				}),
+ 				contentType: "application/json; charset= utf-8",
+ 				success: function (response) {
+ 					
+ 					$("#name").val(response.name);
+ 					alert ("salvou com sucesso");
+ 					}
+ 					
+ 			}).fail(function(xhr, status, errorThrown){
+					alert ("Erro ao salvar" + xhr.reponseText); 				
+ 				
+ 			})
+    	  }
+    	} 
+    	
+    
+    
+    </script>
 </body>
 </html>

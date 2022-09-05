@@ -25,29 +25,29 @@
 
 	<div id="divHeader"></div>
 
-
+<form id="formCadastroUser" name="formCadastroUser" enctype = "multipart/form-data">
 	<div action="" id="formCadastroUser">
 		<h3>Usuario</h3>
 		<div class="mb-3">
 			<label for="id" class="form-label">ID</label> <input type="text"
-				class="form-control" id="id" readonly="readonly">
+			name="id"	class="form-control" id="id" readonly="readonly">
 		</div>
 
 		<div class="mb-3">
 			<label for="Nome" class="form-label">Nome do usuário</label> <input
-				type="text" class="form-control" id="name"
+			name="nametxt"	type="text" class="form-control" id="name"
 				placeholder="Infrome o nome" required="required">
 		</div>
 
 		<div class="mb-3">
 			<label for="Idade" class="form-label">Informe o email</label> <input
-				type="text" class="form-control" id="email"
+			name="email.tx"	type="text" class="form-control" id="email"
 				placeholder="Infrome a sua idade">
 		</div>
 		
 		<div class="mb-3">
 			<label for="Nome" class="form-label">Informe a senha</label> <input
-				type="text" class="form-control" id="password"
+			name="passwordtxt"	type="text" class="form-control" id="password"
 				placeholder="Infrome o seu telefone" required="required"">
 		</div>
 		
@@ -61,7 +61,7 @@
 			</select> <br> <br>
 		</div>
 	</div>
-
+</form>
 	<button type="button" class="btn btn-primary" onclick="saveUser()">Salvar</button>
 	<button type="button" class="btn btn-secondary"
 		onclick="document.getElementById('formCadastroUser').reset();">Novo</button>
@@ -177,14 +177,11 @@
  		
  		var nome  = $('#name').val();
  		
- 		if(nome != null && nome.trim() != '') {
  			
  			debugger;
  			$.ajax({
  				method: "GET",
- 				url: "user/id",
- 				data: "id="+ nome,
- 			
+ 				url: "user",
  				success: function (response) {
  					
  					$('#tabelaResultados > tbody > tr').remove();
@@ -200,7 +197,7 @@
  				
  			})
  			
- 		}
+ 		
  	}
  
  
@@ -251,13 +248,9 @@
  			$.ajax({
  				method: "POST",
  				url: "user",
- 				data: JSON.stringify({
- 					id : id, 
- 					name : name, 
- 					emailDescription : email, 
- 					passwordDescription:password, 
- 					status:status
- 					}),
+ 				data : JSON.stringify({
+ 					id:id,
+ 					name:name ,emailDescription:email,passwordDescription: password ,status:status }),
  				contentType: "application/json; charset= utf-8",
  				success: function (response) {
  					
