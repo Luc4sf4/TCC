@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="produto.css" media="screen" /
+<link rel="stylesheet" type="text/css" href="produto.css" media="screen">
 <script src="https://code.jquery.com/jquery-3.6.0.js"	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 	crossorigin="anonymous"></script>
-<script src="./getParameter.js"	></script>
+
 <style>
 html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
@@ -54,7 +54,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-container">
       <div class="w3-display-container">
 	      <p id="tituloProduto">Ripped Skinny Jeans<br>
-	        <div id="descricaoProduto">Terno social masculino Oxford premium – Modelo Slim – Fluence Moda Social***** Detalhes dos produtos: -Nossos ternos são confeccionadas no modelo Slim, corte Italiano, no tecido 100% poliéster (Oxford premium).--- O paletó possui forro interior pespontado, 3 bolsos frontais, sendo 1 deles fake com opção de ser aberto a gosto do cliente e 2 bolsos interiores detalhando o modelo, no corte italiano 2 botões.</div>
+	        <div id="para">Terno social masculino Oxford premium – Modelo Slim – Fluence Moda Social***** Detalhes dos produtos: -Nossos ternos são confeccionadas no modelo Slim, corte Italiano, no tecido 100% poliéster (Oxford premium).--- O paletó possui forro interior pespontado, 3 bolsos frontais, sendo 1 deles fake com opção de ser aberto a gosto do cliente e 2 bolsos interiores detalhando o modelo, no corte italiano 2 botões.</div>
 	      <div id="precoProduto">R$179,00</div>
 	      <br/>
 	        <div class="w3-col  s6"> Quantidade</div>
@@ -68,16 +68,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 <a href="#" style="width: 100%" class="w3-button w3-black w3-margin"></i>Comprar</a>
-<!-- 
 
-Frete grátis comprando 2 ou mais unidades
-
-
-Comprar agora. Primeiro, escolha os detalhes do produto que deseja.
-
-Adicionar ao carrinho. Primeiro, escolha os detalhes do produto que deseja.
-Devolução grátis. Você tem 30 d
- -->
 
       </div>
     </div>
@@ -120,7 +111,28 @@ Devolução grátis. Você tem 30 d
   </div>
 </div>
 
-<script type="text/javascript">getParametros(3)</script>
+
 <h1 id="parametro_145" ></h1>
+	<script>
+	jQuery(document).ready(function() {
+debugger;
+		$.ajax({
+			method : "GET",
+			url : "http://localhost:8081/api/cadastro/parametros/id",
+			data : "id=" + 3,
+			success : function(response) {
+				$('#parametro_145').text(response.parametro145);
+			}
+
+		}).fail(
+				function(xhr, status, errorThrown) {
+					alert("Erro ao Buscar Usuário por id: "+ xhr.reponseText);
+				})
+	
+	});
+				
+			</script>		
+				
+			
 </body>
 </html>

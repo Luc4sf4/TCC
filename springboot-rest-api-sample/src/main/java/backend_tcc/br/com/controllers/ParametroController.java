@@ -19,7 +19,7 @@ import backend_tcc.br.com.model.Parametros;
 import backend_tcc.br.com.repository.ParametroRepository;
 
 
-@RequestMapping("parametros")
+@RequestMapping("cadastro/parametros")
 @RestController
 public class ParametroController {
 

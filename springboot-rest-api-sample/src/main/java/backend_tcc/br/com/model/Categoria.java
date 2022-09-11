@@ -16,20 +16,19 @@ public class Categoria implements Serializable{
 
 		@Id
 		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_categoria")
-		private Long id;
+		private Long idCategoria;
 		
 		private String description;
 	
 		private String status;
 
-		public Long getId() {
-			return id;
-		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public Long getIdCategoria() {
+			return idCategoria;
 		}
-
+		public void setIdCategoria(Long idCategoria) {
+			this.idCategoria = idCategoria;
+		}
 		public String getDescription() {
 			return description;
 		}

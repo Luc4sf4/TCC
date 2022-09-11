@@ -71,7 +71,7 @@ public class CategoriaController {
 	@ResponseBody
 	public ResponseEntity<?> atualizarCategoria(@RequestBody Categoria categoria) /* Recebe os dados para salvar */ {
 
-		if (categoria.getId() == null) {
+		if (categoria.getIdCategoria() == null) {
 			return new ResponseEntity<String>(" Id não foi informado para a atualização ", HttpStatus.OK);
 		}
 

@@ -10,8 +10,8 @@ jQuery(document).ready(function() {
 function getParametros(idParametro){
 		$.ajax({
 		method: "GET",
-		url: "http://localhost:8081/api/parametros/id",
-		data: "id=" + idParametro,
+		url: "http://localhost:8081/api/cadastro/parametros/id",
+		data: "id=" + 3,
 		success: function(response) {
 			console.log(response);
 
