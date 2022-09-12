@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="ISO-8859-1">
-<title>Marca</title>
+<title>Produto</title>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -35,6 +35,12 @@
 		</div>
 
 		<div class="mb-3">
+
+			<label for="Nome" class="form-label">Id da categoria</label> <input
+				type="text" class="form-control" id="idCat"
+				placeholder="Infrome a Marca" required="required">
+					</div>
+
 
 
 			<label for="Nome" class="form-label">Titulo do produto</label> <input
@@ -122,10 +128,10 @@
 							<thead>
 								<tr>
 									<th scope="col">ID</th>
+									<th scope="col">IDCategoria</th>
 									<th scope="col">Titulo</th>
 									<th scope="col">Descrição</th>
 									<th scope="col">Preço</th>
-									<th scope="col">Status</th>
 									<th scope="col">Editar</th>
 									<th scope="col">Deletar</th>
 
@@ -163,21 +169,25 @@
 	 function saveProd() {
 	 		
 
-		 	var id         = $('#id').val()        ;
-		 	var tituloProd = $('#tituloProduto').val();
-		 	var descProd   = $("#descProduto").val()  ;
-		 	var precoProd  = $("#precoProd").val() ;
-	 		var status     = $('#status').val()    ;
+		 	var id          = $('#id').val()           ;
+		 	var tituloProd  = $('#tituloProduto').val();
+		 	var descProd    = $("#descProduto").val()  ;
+		 	var precoProd   = $("#precoProd").val()    ;
+	 		var idCategoria = $("#idCat").val()        ;
+		 	var status      = $('#status').val()       ;
 	 	
-	 			$.ajax({
+		 	
+		 	
+				$.ajax({
 	 				method: "POST",
 	 				url: "produto",
 	 				data: JSON.stringify({
 	 					
-	 					idcategoria : id        , 
-	 					titulo      : tituloProd,
-	 					descricao   : descProd  ,
-	 					preco       : precoProd ,
+	 					idProduto   : id         , 
+	 					idCategoria  : idCategoria,
+	 					titulo      : tituloProd ,
+	 					descricao   : descProd   ,
+	 					preco       : precoProd  ,
 	 					status      : status 
 	 
 	 					
@@ -192,7 +202,11 @@
 	 			}).fail(function(xhr, status, errorThrown){
 						alert ("Erro ao salvar" + xhr.reponseText); 								
 	 	})
-	}
+	}	 		
+		 		
+		 		
+
+	 
 	
 	
 
@@ -211,10 +225,10 @@
 	 					
 							$('#tabelaResultados > tbody').append('<tr id="'+response[i].idProduto+'"><td>'
 									+response[i].idProduto+'</td><td>'
+									+response[i].idCategoria+'</td><td>'
 									+response[i].titulo      +'</td><td>'
 									+response[i].descricao   +'</td><td>'
-									+response[i].preco       + '</td><td>'
-									+response[i].status      +'</td> <td><button type="button" onclick = "colocarEmEdicao('
+									+response[i].preco       + '</td> <td><button type="button" onclick = "colocarEmEdicao('
 									+response[i].idProduto         +')" class="btn btn-primary"> Editar </button></td><td><button type="button" class="btn btn-danger" onclick = "deleteMarca('+response[i].idProduto+')">Deletar</button></td><td></tr>');   
 							}
 	 					}
@@ -235,6 +249,8 @@
 
 						$('#status').val(response.status);
 
+						$("#idCat").val(response.idCategoria);
+						
 						$("#tituloProd").val(response.titulo);
 						
 						$("#descProd").val(response.descricao);

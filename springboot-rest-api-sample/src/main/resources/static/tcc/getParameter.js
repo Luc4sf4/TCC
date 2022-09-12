@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
 
 	$.ajax({
 		method: "GET",
-		url: "http://localhost:8081/api/parametros/id",
+		url: "http://localhost:8081/api/cadastro/parametros/id",
 		data: "id=" + 3,
 		success: function(response) {
 			console.log(response);

@@ -19,7 +19,7 @@ import backend_tcc.br.com.model.Categoria;
 import backend_tcc.br.com.repository.CategoriaRepository;
 
 
-@RequestMapping ("categoria") 
+@RequestMapping ("cadastro/categoria") 
 @RestController
 public class CategoriaController {
 
@@ -30,8 +30,7 @@ public class CategoriaController {
 	
 	@GetMapping(value = "/id")
 	@ResponseBody
-	public ResponseEntity<Categoria> getcategoriaid(
-			@RequestParam(name = "id") Long id) /* Recebe os dados para consultar */ {
+	public ResponseEntity<Categoria> getcategoriaid(@RequestParam(name = "id") Long id) /* Recebe os dados para consultar */ {
 
 		Categoria id1 = categoriaRepository.findById(id).get();
 
@@ -50,8 +49,7 @@ public class CategoriaController {
 
 	@PostMapping()
 	@ResponseBody
-	public ResponseEntity<Categoria> salvarCategoria(
-			@RequestBody Categoria categoria) /* Recebe os dados para salvar */ {
+	public ResponseEntity<Categoria> salvarCategoria(@RequestBody Categoria categoria) /* Recebe os dados para salvar */ {
 
 		Categoria cat = categoriaRepository.save(categoria);
 

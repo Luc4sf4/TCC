@@ -30,7 +30,7 @@
 
 		<div class="mb-3">
 			<label for="id" class="form-label">ID</label> <input type="text"
-				class="form-control" id="id" readonly="readonly">
+				class="form-control" id="idCategoria" readonly="readonly">
 		</div>
 
 		<div class="mb-3">
@@ -151,32 +151,18 @@
 		
 			function salvarCategoria() {
 
-				var id = $('#id').val();
+				var id = $('#idCategoria').val();
 
 				var categoria = $('#categoriaH').val();
 
 				var status = $('#status').val();
-
-				if (categoria.trim() == "") {
-
-					alert("Informe a categoria");
-					return;
-
-				}
-
-				if (categoria.trim() == "Samsung") {
-
-					alert("EU DISSE CATEGORIA E NÃO MARCA");
-					return;
-
-				}
 
 				$.ajax({
 					method : "POST",
 					url : "categoria",
 					data : JSON.stringify({
 
-						id : id,
+						idCategoria : id,
 						status : status,
 						description : categoria
 
@@ -184,7 +170,7 @@
 					contentType : "application/json; charset= utf-8",
 					success : function(response) {
 
-						$("#id").val(response.id);
+						$("#idCategoria").val(response.idCategoria);
 						alert("salvou com sucesso");
 					}
 
@@ -210,16 +196,16 @@
 
 											$('#tabelaResultados > tbody')
 													.append(
-															'<tr id="'+response[i].id+'"><td>'
-																	+ response[i].id
+															'<tr id="'+response[i].idCategoria+'"><td>'
+																	+ response[i].idCategoria
 																	+ '</td><td>'
 																	+ response[i].description
 																	+ '</td><td>'
 																	+ response[i].status
 																	+ '</td> <td><button type="button" onclick = "colocarEmEdicao('
-																	+ response[i].id
+																	+ response[i].idCategoria
 																	+ ')" class="btn btn-primary">Ver</button></td><td><button type="button" class="btn btn-danger" onclick = "deleteUser('
-																	+ response[i].id
+																	+ response[i].idCategoria
 																	+ ')">Deletar</button></td><td></tr>');
 										}
 									}
@@ -228,15 +214,15 @@
 						})
 			}
 
-			function colocarEmEdicao(id) {
+			function colocarEmEdicao(idCategoria) {
 				$.ajax({
 					method : "GET",
 					url : "categoria/id",
-					data : "id=" + id,
+					data : "id=" + idCategoria,
 
 					success : function(response) {
 
-						$("#id").val(response.id);
+						$("#id").val(response.idCategoria);
 
 						$('#status').val(response.status);
 
