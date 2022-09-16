@@ -29,16 +29,10 @@ public class Parametros implements Serializable {
 	private String title_album;
 	
 	private String title_video;
-
-	private String parametro567;
 	
 	private String parametro786;
-	
-	private String parametro547;
-	
+
 	private String parametro789;
-	
-	private String parametro190;
 	
 	private String parametro988;
 	
@@ -46,36 +40,68 @@ public class Parametros implements Serializable {
 	
 	private String parametro899;
 	
-	private String parametro152;
+	private String descontos;
 	
-	private String parametro145;
+	private String novidades;
+
+	private String titutlo1;
 	
+	private String tituloHome;
 	
+	private String colecoes;
+/*---------------------------------------------------------------------------------------------------------------*/	
 	
-	
-	public String getParametro567() {
-		return parametro567;
+	public String getColecoes() {
+		return colecoes;
 	}
 
-	public void setParametro567(String parametro567) {
-		this.parametro567 = parametro567;
+	
+	
+	public void setColecoes(String colecoes) {
+		this.colecoes = colecoes;
 	}
 
+	
+	
+	
+	public String getDescontos() {
+		return descontos;
+	}
+
+	
+	
+	public void setDescontos(String descontos) {
+		this.descontos = descontos;
+	}
+	
+	
+	
+	
+	public String getNovidades() {
+		return novidades;
+	}
+
+	
+	
+	
+	public void setNovidades(String novidades) {
+		this.novidades = novidades;
+	}
+
+	
+	
+	
 	public String getParametro786() {
 		return parametro786;
 	}
 
+	
+	
+	
 	public void setParametro786(String parametro786) {
 		this.parametro786 = parametro786;
-	}
+	} 
 
-	public String getParametro547() {
-		return parametro547;
-	}
-
-	public void setParametro547(String parametro547) {
-		this.parametro547 = parametro547;
-	}
 
 	public String getParametro789() {
 		return parametro789;
@@ -85,13 +111,7 @@ public class Parametros implements Serializable {
 		this.parametro789 = parametro789;
 	}
 
-	public String getParametro190() {
-		return parametro190;
-	}
 
-	public void setParametro190(String parametro190) {
-		this.parametro190 = parametro190;
-	}
 
 	public String getParametro988() {
 		return parametro988;
@@ -113,28 +133,14 @@ public class Parametros implements Serializable {
 		return parametro899;
 	}
 
+	
+	
+	
 	public void setParametro899(String parametro899) {
 		this.parametro899 = parametro899;
 	}
 
-	public String getParametro152() {
-		return parametro152;
-	}
 
-	public void setParametro152(String parametro152) {
-		this.parametro152 = parametro152;
-	}
-
-	public String getParametro145() {
-		return parametro145;
-	}
-
-	public void setParametro145(String parametro145) {
-		this.parametro145 = parametro145;
-	}
-
-	
-	
 	public String getTitle_video() {
 		return title_video;
 	}
@@ -190,6 +196,22 @@ public class Parametros implements Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getTitutlo1() {
+		return titutlo1;
+	}
+
+	public void setTitutlo1(String titutlo1) {
+		this.titutlo1 = titutlo1;
+	}
+
+	public String getTituloHome() {
+		return tituloHome;
+	}
+
+	public void setTituloHome(String tituloHome) {
+		this.tituloHome = tituloHome;
 	}
 	
 	

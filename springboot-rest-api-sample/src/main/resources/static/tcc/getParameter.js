@@ -3,12 +3,12 @@ jQuery(document).ready(function() {
 	$.ajax({
 		method: "GET",
 		url: "http://localhost:8081/api/cadastro/parametros/id",
-		data: "id=" + 3,
+		data: "id=" + 6,
 		success: function(response) {
 			console.log(response);
 
-			$('#parametro_145').text(response.parametro145);
-
+			$('#tituloHome').text(response.tituloHome);
+			$("#colecoes").text(response.colecoes);
 
 
 		}

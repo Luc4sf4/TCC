@@ -36,16 +36,12 @@
 		<div class="mb-3">
 
 
-			<label for="Nome" class="form-label">parametro 145</label> <input
-				type="text" class="form-control" id="parametro_145"
-				placeholder="Infrome o primeiro Parametro" required="required">
-
-			<label for="Nome" class="form-label">parmetro 152</label> <input
+			<label for="Nome" class="form-label">Titulo da Home</label> <input
 				type="text" class="form-control" id="parametro_152"
 				placeholder="Infrome o subtitulo" required="required">
 				
 				
-				<label for="Nome" class="form-label">parametro 190</label> <input
+				<label for="Nome" class="form-label">Coleções</label> <input
 				type="text" class="form-control" id="parametro_190"
 				placeholder="Infrome o primeiro Parametro" required="required">
 				
@@ -198,7 +194,6 @@
 					function salvarParametro() {
 
 						var id = $('#id').val();
-						var parametro145 = $('#parametro_145').val();
 						var parametro152 = $('#parametro_152').val();
 						var parametro190 = $('#parametro_190').val(); 
 						var parametro547 = $('#parametro_547').val();
@@ -217,8 +212,7 @@
 								//do banco   : do front end
 								
 								id : id,
-							    titulo_1  : parametro145,
-								titulo_2  : parametro152,
+								tituloHome  : parametro152,
 								colecoes  : parametro190,		
 								descontos : parametro547,
 								novidades : parametro567,
@@ -259,11 +253,10 @@
 										{
 											method : "GET",
 /* não me pergunte como, só funciona*/	    url  : "parametros",
-											data : "parametro145=" + titulo_1,
-											data : "parametro152=" + titulo_2,
-											data : "parametro190=" + colecoes,
-											data : "parametro547=" + descontos,
-											data : "parametro567=" + novidades,
+											data : "tituloHome=" +parametro152,
+											data : "colecoes=" + parametro190,
+											data : "descontos=" +parametro547 ,
+											data : "novidades=" + parametro567,
 											data : "parametro765=" + parametro765,
 											data : "parametro786=" + parametro786,
 											data : "parametro789=" + parametro789,
@@ -286,11 +279,11 @@
 																	'<tr id="'+response[i].id+'"><td>'
 																			+ response[i].id
 																			+ '</td><td>'
-																			+             response[i].parametro145	+ '</td><td>'+ response[i].parametro152
-																			+'</td><td>'+ response[i].parametro190  + '</td><td>'+ response[i].parametro547 
-																			+'</td><td>'+ response[i].parametro567  + '</td><td>'+ response[i].parametro765
+																			+ '</td><td>'+ response[i].tituloHome
+																			+'</td><td>'+ response[i].colecoes   + '</td><td>'+ response[i].descontos 
+																			+'</td><td>'+ response[i].Novidades  + '</td><td>'+ response[i].parametro765
 																			+'</td><td>'+ response[i].parametro786  + '</td><td>'+ response[i].parametro789
-																			+'</td><td>'+ response[i].parametro899  + '</td><td>'+ response[i].parametro988
+																			+'</td><td>'+ response[i].parametro899  + '</td><td>'
 																			+'</td><td>'+response[i].status
 																			+ '</td> <td><button type="button" onclick = "colocarEmEdicao('
 																			+ response[i].id
@@ -318,15 +311,15 @@
 
 								$('#status').val(response.status)      	   ;
 
-								$('#parametro_145').val(response.parametro145);
+								$('#parametro_145').val(response.titulo1);
 
-								$('#parametro_152').val(response.parametro152);
+								$('#parametro_152').val(response.titulo_2);
 
-								$('#parametro_190').val(response.parametro190);
+								$('#parametro_190').val(response.colecoes);
 								
-								$('#parametro_547').val(response.parametro547);
+								$('#parametro_547').val(response.descontos);
 								
-								$('#parametro_567').val(response.parametro567);
+								$('#parametro_567').val(response.novidades);
 								
 								$('#parametro_765').val(response.parametro765);
 								
@@ -385,7 +378,7 @@
 						});
 
 						$("#divHeader").load("header.html");
-						colocarEmEdicao(3);
+					
 					});
 				</script>
 </body>
