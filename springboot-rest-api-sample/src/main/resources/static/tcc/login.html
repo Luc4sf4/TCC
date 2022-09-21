@@ -28,14 +28,52 @@
 
             
 
-            <input type="submit" value="Sign Up" id="button">
+            <input type="button" value="Sign Up" id="button" onclick = "getUser()">
         </form>
     </main>
     <section class="images">
 
         <div class="circle"></div>
     </section>
-    <script type="text/javascript">getParametros(3)</script>
+    <script type="text/javascript">
+    
+    
+ function getUser(){
+ 		
+ 		var email  = $('#email').val();
+ 		
+ 		var senha = $("#senha").val();
+ 		
+
+ 			
+ 			debugger;
+ 			$.ajax({
+ 				method: "GET",
+ 				url: "user",
+ 				success: function (response) {
+ 					
+ 					debugger;
+ 					
+ 					$('#tabelaResultados > tbody > tr').remove();
+ 					
+ 					for (var i = 0; i < response.length; i++){
+					
+ 					 window.location = "home.html"
+ 						
+						}
+ 					
+ 					}
+ 					
+ 			}).fail(function(xhr, status, errorThrown){
+					alert ("Erro ao Buscar Usuário" + xhr.reponseText); 				
+ 				
+ 			})
+ 			
+ 		
+ 	}
+    
+    
+    </script>
 <h1 id="parametro_145" ></h1>
 </body>
 </html>

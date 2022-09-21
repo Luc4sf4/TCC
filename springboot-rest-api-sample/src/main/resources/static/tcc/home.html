@@ -10,6 +10,8 @@
 <link rel="stylesheet" type="text/css" href="home.css" media="screen" />
 <script src="https://code.jquery.com/jquery-3.6.0.js"	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 	crossorigin="anonymous"></script>
 <script src="./getParameter.js"	></script>
+<script src="./getCategoria.js"	></script>
+
 <style>
 html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
@@ -78,27 +80,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <div class="w3-container w3-content w3-padding-64" style="max-width:1000px">
     <h2 class="localização">Categorias</h2>
    
-    <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-      <div class="w3-third w3-margin-bottom">
-        <a href="produtos.html?idProduto=1&"><img src="imagens/camisascategorias.png" alt="New York" style="width:100%" class="w3-hover-opacity"></a>
-        <div class="w3-container w3-white">
-          <p><b>Camisas</b></p>
-          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Confira Já!</button>
-        </div>
-      </div>
-      <div class="w3-third w3-margin-bottom">
-        <a href="produtos.html?idProduto=1&"><img src="imagens/calçascategorias.png" alt="Paris" style="width:100%" class="w3-hover-opacity"></a>
-        <div class="w3-container w3-white">
-          <p><b>Calças</b></p>
-          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Confira Já!</button>
-        </div>
-      </div>
-      <div class="w3-third w3-margin-bottom">
-       <a href="produtos.html?idProduto=1&"> <img src="imagens/ternosparacatergoria.png" alt="San Francisco" style="width:100%" class="w3-hover-opacity"></a>
-        <div class="w3-container w3-white">
-          <p><b>Ternos</b></p>
-          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Confira Já!</button>
-        </div>
+    <div class="w3-row-padding w3-padding-32" style="margin:0 -16px" id = "categoria_list">
+     
       </div>
     </div>
   </div>
