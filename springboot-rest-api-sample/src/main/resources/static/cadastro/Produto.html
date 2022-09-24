@@ -27,7 +27,7 @@
 
 		<div id="divHeader"></div>
 
-	<form action="" id="formCadastroUser">
+	<form action="" id="formCadastroUser" enctype = "multipart/forma-data" method = "post">
 
 		<div class="mb-3">
 			<label for="id" class="form-label">ID</label> <input type="text"
@@ -46,7 +46,10 @@
 			<label for="Nome" class="form-label">Titulo do produto</label> <input
 				type="text" class="form-control" id="tituloProduto"
 				placeholder="Infrome a Marca" required="required">
-		</div>
+
+
+			<label for="Nome" class="form-label"> Imagem do Produto</label> 
+			<input type="file" class="form-control" id="file" name = "file" accept = "image/*"/>
 
 
 			<label for="Nome" class="form-label"> Descrição do produto</label> <input
@@ -56,6 +59,8 @@
 							<label for="Nome" class="form-label">Preçõ do produto</label> <input
 				type="text" class="form-control" id="precoProd"
 				placeholder="Infrome a Marca" required="required">
+
+
 
 
 		<div class="mb-3">
@@ -175,7 +180,7 @@
 		 	var precoProd   = $("#precoProd").val()    ;
 	 		var idCategoria = $("#idCat").val()        ;
 		 	var status      = $('#status').val()       ;
-	 	
+	 		var file        = $("#file").val()         ;
 		 	
 		 	
 				$.ajax({
@@ -184,11 +189,12 @@
 	 				data: JSON.stringify({
 	 					
 	 					idProduto   : id         , 
-	 					idCategoria  : idCategoria,
+	 					idCategoria : idCategoria,
 	 					titulo      : tituloProd ,
 	 					descricao   : descProd   ,
 	 					preco       : precoProd  ,
-	 					status      : status 
+	 					imagemProd  : file	
+	 					
 	 
 	 					
 	 				}),

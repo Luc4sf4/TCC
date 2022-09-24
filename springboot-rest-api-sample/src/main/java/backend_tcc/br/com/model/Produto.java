@@ -24,6 +24,8 @@ public class Produto implements Serializable {
 	
 	private String descricao;
 	
+	private byte[] imagemProd;
+
 	private String preco;
 
 	public Long getIdProduto() {
@@ -67,6 +69,13 @@ public class Produto implements Serializable {
 	}
 	
 	
+	public byte[] getImagemProd() {
+		return imagemProd;
+	}
+
+	public void setImagemProd(byte[] imagemProd) {
+		this.imagemProd = imagemProd;
+	}
 	
 	
 	

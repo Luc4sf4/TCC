@@ -37,6 +37,15 @@ html, body, h1, h2, h3, h4 {
 	margin-top: 6px;
 	font-size: 12px
 }
+
+.tituloPagina {
+	margin: 0 0 20px 0;
+	font-weight: bold;
+	font-size: 20px;
+	border-bottom: 1px solid black;
+}
+.descricaoProduto{padding: 10px 10px}
+.precoProduto{font-weight: bold;font-size: 20px;}
 </style>
 </head>
 <body>
@@ -80,25 +89,25 @@ html, body, h1, h2, h3, h4 {
 
 			<div class="w3-col  s6">
 				<div class="w3-container">
-					<img src="imagens/blazer.jpg" style="width: 100%">
+					<img id="imageProduto" style="width: 100%">
 				</div>
 			</div>
 
 			<div class="w3-col  s6">
 				<div class="w3-container">
 					<div class="w3-display-container">
-						<p id="titulo">
+						<p class="tituloPagina" id="titulo">
 							<br>
-						<div id="desc"></div>
-						<div id="preco"></div>
+						<div class="descricaoProduto" id="desc"></div>
+						<div class="precoProduto" id="preco"></div>
 						<br />
 						<div class="w3-col  s6">Quantidade</div>
 						<div class="w3-col  s6">Tamanho</div>
 						<div class="w3-col  s6">
 							<select name="tamanho" style="width: 100px" id="cars">
-								<option value="volvo">P</option>
-								<option value="saab">M</option>
-								<option value="mercedes">G</option>
+								<option value="p">P</option>
+								<option value="m">M</option>
+								<option value="g">G</option>
 							</select>
 						</div>
 						<div class="w3-col  s6">
@@ -159,24 +168,5 @@ html, body, h1, h2, h3, h4 {
 			</div>
 		</div>
 
-
-		<h1 id="parametro_145"></h1>
-		<script>
-			jQuery(document).ready(function() {
-				debugger;
-				$.ajax({
-					method : "GET",
-					url : "http://localhost:8081/api/cadastro/parametros/id",
-					data : "id=" + 3,
-					success : function(response) {
-						$('#parametro_145').text(response.parametro145);
-					}
-
-				}).fail(function(xhr, status, errorThrown) {
-					alert("Erro ao Buscar Usuário por id: " + xhr.reponseText);
-				})
-
-			});
-		</script>
 </body>
 </html>
