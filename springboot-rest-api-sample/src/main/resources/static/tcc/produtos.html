@@ -14,9 +14,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
-<script src="./getProdutos.js">
-	
-</script>
+<script src= "./getProdutos.js"></script>
+<script src = "./getParameter.js"> </script>
+
 
 <style>
 html, body, h1, h2, h3, h4 {
@@ -77,13 +77,13 @@ html, body, h1, h2, h3, h4 {
 
 		<div class="w3-panel" style="text-align: center;">
 			<h1>
-				<b>Categoria: Ternos</b>
+				<b>Categoria: <span id= "desc_categoria">Ternos</span></b>
 			</h1>
 		</div>
 
 
 		<div class="w3-container w3-content w3-center "style="max-width: 800px" id="band">
-			<div class="w3-col l2 s12" id="produtos_list"></div>
+			<div class="w3-col l12 s12" id="produtos_list"></div>
 		</div>
 
 	</div>
@@ -93,7 +93,7 @@ html, body, h1, h2, h3, h4 {
 	<!-- Footer -->
 
 	<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
-		<h4>Footer</h4>
+		<h4 id = "footer"></h4>
 		<a href="#" class="w3-button w3-black w3-margin"><i
 			class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 		<div class="w3-xlarge w3-section">

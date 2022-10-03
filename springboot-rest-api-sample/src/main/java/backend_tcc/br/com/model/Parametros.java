@@ -30,7 +30,7 @@ public class Parametros implements Serializable {
 	
 	private String title_video;
 	
-	private String parametro786;
+	private String footer;
 
 	private String parametro789;
 	
@@ -54,54 +54,26 @@ public class Parametros implements Serializable {
 	public String getColecoes() {
 		return colecoes;
 	}
-
-	
 	
 	public void setColecoes(String colecoes) {
 		this.colecoes = colecoes;
 	}
-
-	
-	
 	
 	public String getDescontos() {
 		return descontos;
 	}
-
-	
 	
 	public void setDescontos(String descontos) {
 		this.descontos = descontos;
 	}
 	
-	
-	
-	
 	public String getNovidades() {
 		return novidades;
 	}
-
-	
-	
 	
 	public void setNovidades(String novidades) {
 		this.novidades = novidades;
 	}
-
-	
-	
-	
-	public String getParametro786() {
-		return parametro786;
-	}
-
-	
-	
-	
-	public void setParametro786(String parametro786) {
-		this.parametro786 = parametro786;
-	} 
-
 
 	public String getParametro789() {
 		return parametro789;
@@ -110,8 +82,6 @@ public class Parametros implements Serializable {
 	public void setParametro789(String parametro789) {
 		this.parametro789 = parametro789;
 	}
-
-
 
 	public String getParametro988() {
 		return parametro988;
@@ -132,9 +102,6 @@ public class Parametros implements Serializable {
 	public String getParametro899() {
 		return parametro899;
 	}
-
-	
-	
 	
 	public void setParametro899(String parametro899) {
 		this.parametro899 = parametro899;
@@ -213,8 +180,13 @@ public class Parametros implements Serializable {
 	public void setTituloHome(String tituloHome) {
 		this.tituloHome = tituloHome;
 	}
-	
-	
-	
-	
+
+	public String getFooter() {
+		return footer;
+	}
+
+	public void setFooter(String footer) {
+		this.footer = footer;
+	}	
+		
 }

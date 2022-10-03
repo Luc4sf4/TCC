@@ -1,79 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 	crossorigin="anonymous"></script>
-<script src="./getParameter.js"	></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="login.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+<script src="./getParameter.js"></script>
 </head>
 <body>
-    <main>
-        <h1>Faça seu Login</h1>
-       
-        <form action="">
-            
+	<main>
+		<h1>Faça seu Login</h1>
 
-            <label for="email">
-                <span>E-mail</span>
-                <input type="email" id="email" name="email">
-            </label>
+		<form action="">
+			<label for="email"> <span>E-mail</span> <input type="email"
+				id="email" name="email">
+			</label> <label for="password"> <span>Senha</span> <input
+				type="password" id="password" name="password">
+			</label> <input type="button" value="Sign Up" id="button" onclick="getUser()">
+		</form>
+	</main>
+	<section class="images">
 
-            <label for="password">
-                <span>Senha</span>
-                <input type="password" id="password" name="password">
-            </label>
+		<div class="circle"></div>
+	</section>
 
-            
 
-            <input type="button" value="Sign Up" id="button" onclick = "getUser()">
-        </form>
-    </main>
-    <section class="images">
 
-        <div class="circle"></div>
-    </section>
-    <script type="text/javascript">
-    
-    
- function getUser(){
- 		
- 		var email  = $('#email').val();
- 		
- 		var senha = $("#senha").val();
- 		
 
- 			
- 			debugger;
- 			$.ajax({
- 				method: "GET",
- 				url: "user",
- 				success: function (response) {
- 					
- 					debugger;
- 					
- 					$('#tabelaResultados > tbody > tr').remove();
- 					
- 					for (var i = 0; i < response.length; i++){
-					
- 					 window.location = "home.html"
- 						
+	<script type="text/javascript">
+		function getUser() {
+
+			var email = $('#email').val();
+			var senha = $("#password").val();
+			var achou = false;
+
+			$.ajax({
+				method : "GET",
+				url : "user",
+				success : function(response) {
+					console.log(response);
+					for (let i = 0; i < response.length; i++) {
+						if (response[i].emailDescription === email && 
+								response[i].passwordDescription == senha){
+							achou = true;
+							window.location.href = "http://localhost:8081/api/tcc/home.html";
+							break;
 						}
- 					
- 					}
- 					
- 			}).fail(function(xhr, status, errorThrown){
-					alert ("Erro ao Buscar Usuário" + xhr.reponseText); 				
- 				
- 			})
- 			
- 		
- 	}
-    
-    
-    </script>
-<h1 id="parametro_145" ></h1>
+					}
+					
+					if(!achou){
+						alert("Usuario ou Senha invalido");						
+					}
+				}
+
+			}).fail(function(xhr, status, errorThrown) {
+				alert("Erro ao Buscar Usuário" + xhr.reponseText);
+
+			})
+
+		}
+	</script>
+	<h1 id="parametro_145"></h1>
 </body>
 </html>

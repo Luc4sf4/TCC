@@ -9,7 +9,7 @@ jQuery(document).ready(function() {
 
 			$('#tituloHome').text(response.tituloHome);
 			$("#colecoes").text(response.colecoes);
-
+			$("#footer").text(response.footer);
 
 		}
 

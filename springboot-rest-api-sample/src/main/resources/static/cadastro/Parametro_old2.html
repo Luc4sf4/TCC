@@ -45,6 +45,10 @@
 				type="text" class="form-control" id="parametro_190"
 				placeholder="Infrome o primeiro Parametro" required="required">
 				
+				<label for="Nome" class="form-label">footer</label> <input
+				type="text" class="form-control" id="parametro_786"
+				placeholder="Infrome o primeiro Parametro" required="required">
+				
 					<label for="Nome" class="form-label">parametro 547</label> <input
 				type="text" class="form-control" id="parametro_547"
 				placeholder="Infrome o primeiro Parametro" required="required">
@@ -57,9 +61,7 @@
 				type="text" class="form-control" id="parametro_765"
 				placeholder="Infrome o primeiro Parametro" required="required">
 				
-					<label for="Nome" class="form-label">parametro 786</label> <input
-				type="text" class="form-control" id="parametro_786"
-				placeholder="Infrome o primeiro Parametro" required="required">
+					
 				
 					<label for="Nome" class="form-label">parametro 789</label> <input
 				type="text" class="form-control" id="parametro_789"
@@ -162,7 +164,7 @@
 												<th scope= "col">parametro 547  </th>
 												<th scope="col"> parametro 567  </th>
 												<th scope="col"> parametro 765  </th>
-												<th scope="col"> parametro 786  </th>
+												<th scope="col"> footer         </th>
 												<th scope="col"> parametro 789  </th>
 												<th scope="col"> parametro 899  </th>
 												<th scope="col"> parametro 988  </th>
@@ -199,7 +201,7 @@
 						var parametro547 = $('#parametro_547').val();
 						var parametro567 = $('#parametro_567').val();				
 						var parametro765 = $('#parametro_765').val();
-						var parametro786 = $('#parametro_785').val();
+						var parametro786 = $('#parametro_786').val();
 						var parametro789 = $('#parametro_789').val();
 						var parametro899 = $('#parametro_899').val();
 						var parametro988 = $('#parametro_988').val();
@@ -217,7 +219,7 @@
 								descontos : parametro547,
 								novidades : parametro567,
 								parametro765 : parametro765,
-								parametro786 : parametro786,
+								footer       : parametro786,
 								parametro789 : parametro789,
 								parametro899 : parametro899,
 								parametro988 : parametro988
@@ -258,7 +260,7 @@
 											data : "descontos=" +parametro547 ,
 											data : "novidades=" + parametro567,
 											data : "parametro765=" + parametro765,
-											data : "parametro786=" + parametro786,
+											data : "footer=" + parametro786,
 											data : "parametro789=" + parametro789,
 											data : "parametro899=" + parametro899,
 											data : "parametro988=" + parametro988,
@@ -282,7 +284,7 @@
 																			+ '</td><td>'+ response[i].tituloHome
 																			+'</td><td>'+ response[i].colecoes   + '</td><td>'+ response[i].descontos 
 																			+'</td><td>'+ response[i].Novidades  + '</td><td>'+ response[i].parametro765
-																			+'</td><td>'+ response[i].parametro786  + '</td><td>'+ response[i].parametro789
+																			+'</td><td>'+ response[i].footer     + '</td><td>'+ response[i].parametro789
 																			+'</td><td>'+ response[i].parametro899  + '</td><td>'
 																			+'</td><td>'+response[i].status
 																			+ '</td> <td><button type="button" onclick = "colocarEmEdicao('
@@ -323,7 +325,7 @@
 								
 								$('#parametro_765').val(response.parametro765);
 								
-								$('#parametro_786').val(response.parametro786);
+								$('#parametro_786').val(response.footer);
 								
 								$('#parametro_789').val(response.parametro789);
 								
