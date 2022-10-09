@@ -58,24 +58,16 @@ html, body, h1, h2, h3, h4 {
 				class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
 				href="javascript:void(0)" onclick="myFunction()"
 				title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> <a
-				href="home.html?idProduto=1&"
+				href="home.html"
 				class="w3-bar-item w3-button w3-padding-large">Home</a> <a
-				href="login.html?idProduto=1&"
+				href="login.html"
 				class="w3-button w3-black w3-padding-large w3-large">Login</a> <a
-				href="categorias.html?idProduto=1&"
+				href="categorias.html"
 				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Categorias</a>
 			<a href="faleConosco"
 				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Fale
 				Conosco</a>
-			<div class="w3-dropdown-hover w3-hide-small">
-				<button class="w3-padding-large w3-button" title="More">
-					Sobre nós <i class="fa fa-caret-down"></i>
-				</button>
-				<div class="w3-dropdown-content w3-bar-block w3-card-4">
-					<a href="#" class="w3-bar-item w3-button">Redes Sociais</a> <a
-						href="#" class="w3-bar-item w3-button">Localização</a>
-				</div>
-			</div>
+
 		</div>
 	</div>
 
@@ -101,8 +93,8 @@ html, body, h1, h2, h3, h4 {
 						<div class="descricaoProduto" id="desc"></div>
 						<div class="precoProduto" id="preco"></div>
 						<br />
-						<div class="w3-col  s6">Quantidade</div>
 						<div class="w3-col  s6">Tamanho</div>
+						<div class="w3-col  s6">Quantidade</div>
 						<div class="w3-col  s6">
 							<select name="tamanho" style="width: 100px" id="cars">
 								<option value="p">P</option>
@@ -135,38 +127,19 @@ html, body, h1, h2, h3, h4 {
 
 		<!-- Footer -->
 
-		<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
-			<h4>Footer</h4>
-			<a href="#" class="w3-button w3-black w3-margin"><i
-				class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-			<div class="w3-xlarge w3-section">
-				<i class="fa fa-facebook-official w3-hover-opacity"></i> <i
-					class="fa fa-instagram w3-hover-opacity"></i> <i
-					class="fa fa-snapchat w3-hover-opacity"></i> <i
-					class="fa fa-pinterest-p w3-hover-opacity"></i> <i
-					class="fa fa-twitter w3-hover-opacity"></i> <i
-					class="fa fa-linkedin w3-hover-opacity"></i>
-			</div>
-		</footer>
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+  <h4 id ="footer"></h4>
+   <div class="w3-xlarge w3-section" style="display: none;">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
 
-		<div id="subscribe" class="w3-modal w3-animate-opacity">
-			<div class="w3-modal-content" style="padding: 32px">
-				<div class="w3-container w3-white">
-					<i
-						onclick="document.getElementById('subscribe').style.display='none'"
-						class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
-					<h2 class="w3-wide">Inscreva-se</h2>
-					<p>Veja nossas novidades na palma da mão!</p>
-					<p>
-						<input class="w3-input w3-border" type="text"
-							placeholder="Seu E-mail">
-					</p>
-					<button type="button"
-						class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom"
-						onclick="document.getElementById('subscribe').style.display='none'">Prosseguir</button>
-				</div>
-			</div>
-		</div>
+
 
 </body>
 </html>

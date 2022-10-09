@@ -8,20 +8,15 @@ jQuery(document).ready(function() {
 		data: "id=" + id,
 		success: function(response) {
 			console.log(response);
+			$('#imageProduto').attr('src', 'imagens/' + response.nomeFoto);
 			$('#titulo').text(response.titulo);
 			$("#desc").text(response.descricao);
 			$("#preco").text('R$ ' + response.preco);
-			$('#imageProduto').attr('src', 'imagens/terno_' + id + '.jpg');
 		}
-		
+
 	}).fail(function(xhr, status, errorThrown) {
 		alert("Erro ao Buscar Usuario por id: " + xhr.reponseText);
-
 	});
-
-
-
-
 });
 
 

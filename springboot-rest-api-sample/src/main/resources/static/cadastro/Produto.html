@@ -47,9 +47,10 @@
 				type="text" class="form-control" id="tituloProduto"
 				placeholder="Infrome a Marca" required="required">
 
+			<label for="Nome" class="form-label">Titulo da Foto</label> <input
+				type="text" class="form-control" id="tituloFoto"
+				placeholder="Infrome a Marca" required="required">
 
-			<label for="Nome" class="form-label"> Imagem do Produto</label> 
-			<input type="file" class="form-control" id="file" name = "file" accept = "image/*"/>
 
 
 			<label for="Nome" class="form-label"> Descrição do produto</label> <input
@@ -59,20 +60,6 @@
 							<label for="Nome" class="form-label">Preçõ do produto</label> <input
 				type="text" class="form-control" id="precoProd"
 				placeholder="Infrome a Marca" required="required">
-
-
-
-
-		<div class="mb-3">
-			<label for="status">Informe o Status:</label> <select name="status"
-				id="status">
-				<option value="1">Ativo</option>
-				<option value="2">Desativado</option>
-				<option value="3">Não Identificado</option>
-				<option value="4">Temporariamente Fora</option>
-			</select> <br> <br>
-		</div>
-
 	</form>
 
 
@@ -179,9 +166,7 @@
 		 	var descProd    = $("#descProduto").val()  ;
 		 	var precoProd   = $("#precoProd").val()    ;
 	 		var idCategoria = $("#idCat").val()        ;
-		 	var status      = $('#status').val()       ;
-	 		var file        = $("#file").val()         ;
-		 	
+		 	var nomeFoto    = $("#tituloFoto").val()   ;
 		 	
 				$.ajax({
 	 				method: "POST",
@@ -193,7 +178,8 @@
 	 					titulo      : tituloProd ,
 	 					descricao   : descProd   ,
 	 					preco       : precoProd  ,
-	 					imagemProd  : file	
+	 					nomeFoto    : nomeFoto   ,
+	 					
 	 					
 	 
 	 					

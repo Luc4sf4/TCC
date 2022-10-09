@@ -32,7 +32,7 @@ jQuery(document).ready(function() {
 
 					if (response[i].idCategoria == id) {
 
-						conteudo = conteudo + '<div class="w3-col s4 "><div class="w3-container"><a href="produto.html?idProduto=' + response[i].idProduto + '&"> <img src="imagens/'+nomeCategoria+'_' + response[i].idProduto + '.jpg" style="width:100%"></a><p><span class="tituloProduto" id="titulo_1">' +
+						conteudo = conteudo + '<div class="w3-col s4 "><div class="w3-container"><a href="produto.html?idProduto=' + response[i].idProduto + '&"> <img src="imagens/'+ response[i].nomeFoto + ' " style="border: 3px solid black; width:100%"></a><p><span class="tituloProduto" id="titulo_1">' +
 							response[i].titulo + '</span> <br><b><span class="precoProduto" id="preco_1">' +
 							response[i].preco + '</span> </b></p></div></div>';
 					}

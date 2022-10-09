@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Categorias</title>
+<title>Home</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -13,8 +13,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
-<script src="./getCategoria.js"></script>
 <script src="./getParameter.js"></script>
+<script src="./getCategoria.js"></script>
+
+<script src="./getDestaque.js"></script>
+
 <style>
 html, body, h1, h2, h3, h4 {
 	font-family: "Lato", sans-serif
@@ -37,7 +40,7 @@ html, body, h1, h2, h3, h4 {
 }
 </style>
 </head>
-<body style="background-color: black">
+<body>
 
 
 
@@ -48,34 +51,37 @@ html, body, h1, h2, h3, h4 {
 				href="javascript:void(0)" onclick="myFunction()"
 				title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> <a
 				href="home.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+			<a href="Cadastro.html"
+				class="w3-button w3-black w3-padding-large w3-large">Cadastre-se</a>
 			<a href="Login.html"
 				class="w3-button w3-black w3-padding-large w3-large">Login</a> <a
 				href="categorias.html"
 				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Categoria</a>
-			<a href="Cadastro.html"
-				class="w3-button w3-black w3-padding-large w3-large">Cadastre-se</a>
+			<a href="#contact"
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Fale
+				Conosco</a>
 
 		</div>
 	</div>
 
-	<!-- Content -->
-	<div class="w3-content" style="max-width: 1500px; margin-top: 60px; margin-bottom: 60px">
+	<div class="w3-content" style="max-width: 1500px; margin-top: 80px;">
 
-
-		<div class="w3-black" id="tour">
-			<div class="w3-container w3-content" style="max-width: 1000px">
-
-				<div class="w3-row-padding w3-padding-32" style="margin: 0 -16px"
-					id="categoria_list"></div>
-			</div>
+		<div class="w3-center w3-padding-64" id="contact">
+			<span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Obrigado</span>
 		</div>
+		
+		<div class="w3-center w3-padding-64" id="contact">
+			<span class="formularioRecebido">Seu formulário foi enviado
+				com sucesso, e em breve entraremos em contato</span>
+		</div>
+
 	</div>
+	<br></br>	<br></br>	<br></br>	<br></br>
 
 
-
-	<br></br>
 
 	<!-- Footer -->
+
 	<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
 		<h4 id="footer"></h4>
 		<div class="w3-xlarge w3-section" style="display: none;">
@@ -87,6 +93,48 @@ html, body, h1, h2, h3, h4 {
 				class="fa fa-linkedin w3-hover-opacity"></i>
 		</div>
 	</footer>
+
+
+
+	<script>
+		// Slideshow
+		var slideIndex = 1;
+		showDivs(slideIndex);
+
+		function plusDivs(n) {
+			showDivs(slideIndex += n);
+		}
+
+		function currentDiv(n) {
+			showDivs(slideIndex = n);
+		}
+
+		function showDivs(n) {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("demodots");
+			if (n > x.length) {
+				slideIndex = 1
+			}
+			if (n < 1) {
+				slideIndex = x.length
+			}
+			;
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" w3-white", "");
+			}
+			try {
+				x[slideIndex - 1].style.display = "block";
+				dots[slideIndex - 1].className += " w3-white";
+
+			} catch (error) {
+			}
+		}
+	</script>
+
 
 </body>
 </html>

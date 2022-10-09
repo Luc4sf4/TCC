@@ -24,7 +24,7 @@ public class Produto implements Serializable {
 	
 	private String descricao;
 	
-	private byte[] imagemProd;
+	private String nomeFoto;
 
 	private String preco;
 
@@ -67,15 +67,17 @@ public class Produto implements Serializable {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	
-	public byte[] getImagemProd() {
-		return imagemProd;
+
+	public String getNomeFoto() {
+		return nomeFoto;
 	}
 
-	public void setImagemProd(byte[] imagemProd) {
-		this.imagemProd = imagemProd;
+	public void setNomeFoto(String nomeFoto) {
+		this.nomeFoto = nomeFoto;
 	}
+	
+	
+
 	
 	
 	
