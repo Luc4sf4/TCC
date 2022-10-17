@@ -24,7 +24,14 @@ import javax.persistence.SequenceGenerator;
 		
 		private String passwordDescription;
 		
+		private Long admin;
+		
 		private String status;
+		
+	
+		
+		
+		
 
 		public Long getId() {
 			return id;
@@ -64,5 +71,13 @@ import javax.persistence.SequenceGenerator;
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Long getAdmin() {
+			return admin;
+		}
+
+		public void setAdmin(Long admin) {
+			this.admin = admin;
 		}
 }

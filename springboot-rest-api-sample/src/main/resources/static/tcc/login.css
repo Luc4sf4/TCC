@@ -8,13 +8,17 @@
     font-family: "Poppins", sans-serif;
 }
 
+a, a:hover{
+	text-decoration: none!important;
+}
+
 body {
-    background: #1B2029;
-    color: white;
-    font-weight: 500;
-    display: flex;
-    min-height: 100vh;
-    min-width: 100vw;
+    background-color: #1B2029!important;
+    color: white!important;
+    font-weight: 500!important;
+    display: flex!important;
+    min-height: 100vh!important;
+    min-width: 100vw!important;
 }
 
 main {

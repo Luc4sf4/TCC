@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import backend_tcc.br.com.model.Usuario;
 import backend_tcc.br.com.repository.UsuarioRepository;
 
-@RequestMapping("tcc/user")
+@RequestMapping("cadastro/user")
 @RestController
 public class UsuarioController {
 

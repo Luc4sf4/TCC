@@ -12,6 +12,7 @@ jQuery(document).ready(function() {
 			$('#titulo').text(response.titulo);
 			$("#desc").text(response.descricao);
 			$("#preco").text('R$ ' + response.preco);
+			
 		}
 
 	}).fail(function(xhr, status, errorThrown) {
