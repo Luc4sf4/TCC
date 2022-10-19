@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Produto</title>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="produto.css" media="screen">
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+<script src="./getCompra.js"></script>
+
+
+
+<style>
+</style>
+</head>
+<body>
+
+
+
+	<div class="w3-top">
+		<div class="w3-bar w3-black w3-card">
+			<a
+				class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+				href="javascript:void(0)" onclick="myFunction()"
+				title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> <a
+				href="home.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+			<a href="login.html"
+				class="w3-button w3-black w3-padding-large w3-large">Login</a> <a
+				href="categorias.html"
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Categorias</a>
+			<a href="faleConosco"
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Fale
+				Conosco</a>
+
+		</div>
+	</div>
+
+	<!-- Content -->
+
+	<div class="w3-container w3-content w3-center w3-padding-64"
+		style="width: 100%" id="band">
+		<h1>RESUMO DA COMPRA</h1>
+		<table style="border: 1px solid black; width: 100%">
+			<tr>
+				<th>Produto</th>
+				<th>Descrição</th>
+				<th>Quantidade</th>
+				<th>Data Entrega</th>
+				<th>Frete</th>
+				<th>Tamanho</th>
+				<th>Preço</th>
+			</tr>
+			<tr>
+				<td><img id="imageProduto" style="width: 100px"></td>
+				<td>
+					<div class="descricaoProduto" id="desc"></div>
+				</td>
+				<td><input type="text" id="qtde"  style="width: 50px" ></td>
+				<td>
+					<div class="descricaoProduto" id="calculoEntrega">30/10/22</div>
+				</td>
+				<td>
+					<div class="descricaoProduto" id="frete">R$ 12,00</div>
+				</td>
+				<td>
+					<select name="tamanho" style="width: 100px" id="cars">
+						<option value="p">P</option>
+						<option value="m">M</option>
+						<option value="g">G</option>
+					</select>
+				</td>
+				<td>
+					<div class="precoProduto" id="preco"></div>
+				</td>
+				<td></td>
+			</tr>
+		</table>
+
+
+		<h1>DADOS DO COMPRADOR</h1>
+		<table style="border: 1px solid black; width: 100%">
+			<tr>
+				<th>Comprador</th>
+				<th>Forma de Pagamento</th>
+				<th>Total da Compra R$
+					<div class="precoProduto" id="PrecoTotal">R$ 120,00</div>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<div id="nomeUsuario"></div>
+				</td>
+				<td>PIX image</td>
+
+				<td><a href="#" style="width: 80%"
+					class="w3-button w3-black w3-margin"></i>Efetivar a Compra</a></td>
+			</tr>
+
+		</table>
+
+	</div>
+
+
+
+	<br></br>
+
+	<!-- Footer -->
+
+	<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+		<h4 id="footer"></h4>
+		<div class="w3-xlarge w3-section" style="display: none;">
+			<i class="fa fa-facebook-official w3-hover-opacity"></i> <i
+				class="fa fa-instagram w3-hover-opacity"></i> <i
+				class="fa fa-snapchat w3-hover-opacity"></i> <i
+				class="fa fa-pinterest-p w3-hover-opacity"></i> <i
+				class="fa fa-twitter w3-hover-opacity"></i> <i
+				class="fa fa-linkedin w3-hover-opacity"></i>
+		</div>
+	</footer>
+
+
+	<script src="./getParameter.js"></script>
+</body>
+</html>

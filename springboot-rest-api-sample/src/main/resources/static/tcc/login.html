@@ -25,11 +25,6 @@
 			</label> 
 			<input type="button" value="Sign Up" id="button" onclick="getUser()">
 			<br>
-			<div class="row">
-				<div class="col-md-12 d-flex align-items-center">
-					<a href="Login_ADM.html" class="">Login dos administrativo</a>
-				</div>
-			</div>
 		</form>
 	</main>
 	<section class="images">
@@ -51,19 +46,24 @@
 				method : "GET",
 				url : "http://localhost:8081/api/cadastro/user",
 				success : function(response) {
-					console.log(response);
 					for (let i = 0; i < response.length; i++) {
 						if (response[i].emailDescription === email && 
 								response[i].passwordDescription == senha){
 							achou = true;
 							
-							if(response[i].admin == 1){
+								console.log(response[i]);
 								
-								window.location.href = "http://localhost:8081/api/cadastro/Produto.html";
+								//Guardar no Local Storage dados do Uuario Logado
+								localStorage.setItem("user",response[i].name);
+								localStorage.setItem("idUser",response[i].id);
+								localStorage.setItem("admin",response[i].admin);
+								
+							if(response[i].admin == 1){
+							//	window.location.href = "http://localhost:8081/api/cadastro/Produto.html";
 								
 							}else{
 				
-								window.location.href = "http://localhost:8081/api/tcc/home.html";	
+								//window.location.href = "http://localhost:8081/api/tcc/home.html";	
 					
 								}
 							// se admin ==1   location para o cadastro

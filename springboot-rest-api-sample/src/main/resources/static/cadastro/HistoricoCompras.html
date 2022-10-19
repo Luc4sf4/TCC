@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Produto</title>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+</head>
+<body>
+	<h3>Spring Boot REST API CRUD completo Jdev Treinamento</h3>
+
+
+	<div id="divHeader"></div>
+
+	<form action="" id="formCadastroUser" enctype="multipart/forma-data"
+		method="post">
+
+		<div class="mb-3">
+			<label for="id" class="form-label">ID</label> <input type="text"
+				class="form-control" id="id" readonly="readonly">
+		</div>
+
+		<div class="mb-3">
+
+			<label for="Nome" class="form-label">Id do Usuario</label> <input
+				type="text" class="form-control" id="idUser" required="required">
+		</div>
+
+
+
+		<label for="Nome" class="form-label">id do Produto</label> <input
+			type="text" class="form-control" id="idProd" required="required">
+
+		<label for="Nome" class="form-label">Quantidade</label> <input
+			type="text" class="form-control" id="quantidadeYH"
+			required="required">
+
+
+
+		<div id="date-picker-example"
+			class="md-form md-outline input-with-post-icon datepicker"
+			inline="true">
+			<input placeholder="Select date" type="text" id="example"
+				class="form-control"> <label for="example">Try me...</label>
+			<i class="fas fa-calendar input-prefix"></i>
+		</div>
+
+		<label for="Nome" class="form-label">Valor</label> <input type="text"
+			class="form-control" id="price" required="required">
+	</form>
+
+
+	<button type="button" class="btn btn-primary" onclick="saveProd()">Salvar</button>
+
+
+	<button type="button" class="btn btn-secondary"
+		onclick="document.getElementById('formCadastroUser').reset();">Novo</button>
+
+
+	<button type="button" class="btn btn-danger" data-bs-toggle="modal"
+		data-bs-target="#modalbuscarPorStatus">Pesquisar</button>
+
+
+
+	<button type="button" class="btn btn-warning"
+		onclick="botaodeletarDaTela()">Deletar</button>
+
+
+	<div class="modal fade" id="modalbuscarPorStatus" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+		<div class="modal-dialog">
+
+
+			<div class="modal-content">
+
+
+				<div class="modal-header">
+
+
+					<h5 class="modal-title" id="exampleModalLabel"></h5>
+
+
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+
+
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="mb-3">
+							<label for="recipient-name" class="col-form-label">
+								Informe o Status: </label> <input type="text" class="form-control"
+								id="statusBusca">
+						</div>
+
+
+						<div class="mb-3"></div>
+						<button type="button" class="btn btn-success"
+							onclick="getListProd()">Buscar</button>
+
+					</form>
+
+					<div style="height: 300px; overflow: scroll;">
+						<table class="table" id="tabelaResultados">
+							<thead>
+								<tr>
+									<th scope="col">ID</th>
+									<th scope="col">IDCategoria</th>
+									<th scope="col">Titulo</th>
+									<th scope="col">Descrição</th>
+									<th scope="col">Preço</th>
+									<th scope="col">Editar</th>
+									<th scope="col">Deletar</th>
+
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		function saveProd() {
+
+			var id = $('#id').val();
+			var tituloProd = $('#tituloProduto').val();
+			var descProd = $("#descProduto").val();
+			var precoProd = $("#precoProd").val();
+			var idCategoria = $("#idCat").val();
+			var nomeFoto = $("#tituloFoto").val();
+
+			$.ajax({
+				method : "POST",
+				url : "produto",
+				data : JSON.stringify({
+
+					idProduto : id,
+					idCategoria : idCategoria,
+					titulo : tituloProd,
+					descricao : descProd,
+					preco : precoProd,
+					nomeFoto : nomeFoto,
+
+				}),
+				contentType : "application/json; charset= utf-8",
+				success : function(response) {
+
+					$("#id").val(response.id);
+					alert("salvou com sucesso");
+				}
+
+			}).fail(function(xhr, status, errorThrown) {
+				alert("Erro ao salvar" + xhr.reponseText);
+			})
+		}
+
+		function getListProd() {
+			var produto = $('#descProd').val();
+			$
+					.ajax(
+							{
+								method : "GET",
+								url : "produto",
+
+								success : function(response) {
+
+									$('#tabelaResultados > tbody > tr')
+											.remove();
+
+									for (var i = 0; i < response.length; i++) {
+
+										$('#tabelaResultados > tbody')
+												.append(
+														'<tr id="'+response[i].idProduto+'"><td>'
+																+ response[i].idProduto
+																+ '</td><td>'
+																+ response[i].idCategoria
+																+ '</td><td>'
+																+ response[i].titulo
+																+ '</td><td>'
+																+ response[i].descricao
+																+ '</td><td>'
+																+ response[i].preco
+																+ '</td> <td><button type="button" onclick = "colocarEmEdicao('
+																+ response[i].idProduto
+																+ ')" class="btn btn-primary"> Editar </button></td><td><button type="button" class="btn btn-danger" onclick = "deleteMarca('
+																+ response[i].idProduto
+																+ ')">Deletar</button></td><td></tr>');
+									}
+								}
+							}).fail(function(xhr, status, errorThrown) {
+						alert("Erro ao Buscar Usuário" + xhr.reponseText);
+					})
+		}
+
+		function colocarEmEdicao(id) {
+			$.ajax({
+				method : "GET",
+				url : "produto/id",
+				data : "id=" + id,
+
+				success : function(response) {
+
+					$("#id").val(response.idProduto);
+
+					$('#status').val(response.status);
+
+					$("#idCat").val(response.idCategoria);
+
+					$("#tituloProd").val(response.titulo);
+
+					$("#descProd").val(response.descricao);
+
+					$("#precoProd").val(response.preco);
+
+					$('#modalbuscarPorStatus').modal('hide');
+
+					$('.show').hide();
+
+				}
+
+			}).fail(function(xhr, status, errorThrown) {
+				alert("Erro ao Buscar Usuário por id: " + xhr.reponseText);
+
+			})
+		}
+
+		function deleteMarca(idProduto) {
+			if (confirm('Deseja realemente deletar ?')) {
+				$.ajax({
+					method : "DELETE",
+					url : "produto",
+					data : "id=" + idProduto,
+
+					success : function(response) {
+
+						$('#' + idProduto).remove();
+
+						alert(response);
+
+					}
+
+				}).fail(
+						function(xhr, status, errorThrown) {
+							alert("Erro ao deletar o Usuário por ID: "
+									+ xhr.reponseText);
+
+						})
+			}
+
+		}
+
+		jQuery(document).ready(function() {
+
+			jQuery('.toggle-nav').click(function(e) {
+				jQuery(this).toggleClass('active');
+				jQuery('.menu ul').toggleClass('active');
+				e.preventDefault();
+			});
+
+			$("#divHeader").load("header.html");
+
+		})
+		
+		
+		
+		$('.datepicker').datepicker({
+  inline: true
+});
+	</script>
+
+</body>
+</html>
