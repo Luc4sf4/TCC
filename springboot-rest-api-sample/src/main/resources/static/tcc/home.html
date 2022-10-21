@@ -11,7 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="./getParameter.js"	></script>
 <script src="./getCategoria.js"	></script>
-
+<script src="./home.js"	></script>
 <script src="./getDestaque.js"></script>
 
 <style>
@@ -19,6 +19,15 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
 .w3-tag, .fa {cursor:pointer}
 .w3-tag {height:15px;width:15px;padding:0;margin-top:6px; font-size:12px}
+
+#nameUser{
+    float: right;
+    color: white;
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+    
 </style>
 </head>
 <body>
@@ -29,12 +38,18 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-bar w3-black w3-card">
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <a href="home.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-      <a href="Cadastro.html" class="w3-button w3-black w3-padding-large w3-large">Cadastre-se</a>
-      <a href="Login.html" class="w3-button w3-black w3-padding-large w3-large">Login</a>
+      <a href="Cadastro.html" class="w3-button w3-black w3-padding-large w3-large" id = "cadastroTop">Cadastre-se</a>
+      <a href="Login.html" class="w3-button w3-black w3-padding-large w3-large"id = "loginTop">Login</a>
       <a href="categorias.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Categoria</a>
       <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Fale Conosco</a>
-
+      <a href="historico.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Minhas Compras</a>
+      <div id="nameUser"> </div>
     </div>
+
+
+    
+    
+    
   </div>
 
 <!-- Content -->
@@ -179,6 +194,11 @@ function showDivs(n) {
 	  
   }catch(error){}
 }
+
+
+
+
+
 </script>
 
 

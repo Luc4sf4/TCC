@@ -14,7 +14,7 @@
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
 <script src="./getProduto.js"></script>
-
+<script src="./getParameter.js"></script>
 
 
 <style>
@@ -64,10 +64,8 @@ html, body, h1, h2, h3, h4 {
 				class="w3-button w3-black w3-padding-large w3-large">Login</a> <a
 				href="categorias.html"
 				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Categorias</a>
-			<a href="faleConosco"
-				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Fale
-				Conosco</a>
-
+			<a href="historico.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Minhas Compras</a>
+ <div id="nameUser"> </div>
 		</div>
 	</div>
 
@@ -103,11 +101,11 @@ html, body, h1, h2, h3, h4 {
 							</select>
 						</div>
 						<div class="w3-col  s6">
-							<input type="number" placeholder="Unidade" style="width: 100px">
+							<input type="number" min="1" disabled  style="width: 70px" value="1">
 						</div>
 
 
-						<a href="#" style="width: 100%"
+						<a id="btnComprar" style="width: 100%"
 							class="w3-button w3-black w3-margin"></i>Comprar</a>
 
 

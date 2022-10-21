@@ -144,7 +144,7 @@
 
 				$.ajax({
 					method : "DELETE",
-					url : "tcc/user",
+					url : "user",
 					data : "id=" + id,
 
 					success : function(response) {
@@ -210,7 +210,7 @@ console.log(response);
 		function putInEdition(id) {
 			$.ajax({
 				method : "GET",
-				url : "tcc/user/id",
+				url : "user/id",
 				data : "id=" + id,
 
 				success : function(response) {

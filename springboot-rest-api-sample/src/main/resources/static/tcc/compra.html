@@ -13,10 +13,18 @@
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
 <script src="./getCompra.js"></script>
-
+<script src="./getParameter.js"></script>
 
 
 <style>
+#nameUser{
+    float: right;
+    color: white;
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+   
 </style>
 </head>
 <body>
@@ -34,9 +42,10 @@
 				class="w3-button w3-black w3-padding-large w3-large">Login</a> <a
 				href="categorias.html"
 				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Categorias</a>
-			<a href="faleConosco"
-				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Fale
-				Conosco</a>
+			<a href="historico.html"
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Minhas
+				Compras</a>
+				 <div id="nameUser"> </div>
 
 		</div>
 	</div>
@@ -49,7 +58,7 @@
 		<table style="border: 1px solid black; width: 100%">
 			<tr>
 				<th>Produto</th>
-				<th>Descrição</th>
+				<th width="200px">Descrição</th>
 				<th>Quantidade</th>
 				<th>Data Entrega</th>
 				<th>Frete</th>
@@ -61,20 +70,19 @@
 				<td>
 					<div class="descricaoProduto" id="desc"></div>
 				</td>
-				<td><input type="text" id="qtde"  style="width: 50px" ></td>
+				<td><input type="number" id="qtde" min="1" value="1"
+					style="width: 50px"></td>
 				<td>
 					<div class="descricaoProduto" id="calculoEntrega">30/10/22</div>
 				</td>
 				<td>
 					<div class="descricaoProduto" id="frete">R$ 12,00</div>
 				</td>
-				<td>
-					<select name="tamanho" style="width: 100px" id="cars">
+				<td><select name="tamanho" style="width: 100px" id="cars">
 						<option value="p">P</option>
 						<option value="m">M</option>
 						<option value="g">G</option>
-					</select>
-				</td>
+				</select></td>
 				<td>
 					<div class="precoProduto" id="preco"></div>
 				</td>
@@ -89,17 +97,21 @@
 				<th>Comprador</th>
 				<th>Forma de Pagamento</th>
 				<th>Total da Compra R$
-					<div class="precoProduto" id="PrecoTotal">R$ 120,00</div>
+					<div class="precoProduto" id="precoTotal"></div>
 				</th>
 			</tr>
 			<tr>
 				<td>
 					<div id="nomeUsuario"></div>
 				</td>
-				<td>PIX image</td>
+				<td><img  src="imagens/logo_pix.png" style="width: 100px"></td>
 
-				<td><a href="#" style="width: 80%"
-					class="w3-button w3-black w3-margin"></i>Efetivar a Compra</a></td>
+				<td>
+	
+					<button style="width: 80%" class="w3-button w3-black w3-margin"
+						onclick="saveHistoricoProduto()">Efetivar Compra</button>
+
+				</td>
 			</tr>
 
 		</table>

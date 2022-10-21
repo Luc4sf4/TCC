@@ -1,6 +1,7 @@
 jQuery(document).ready(function() {
 	const urlParams = new URLSearchParams(window.location.search);
 	const id = urlParams.get('idProduto');
+	$("#btnComprar").attr("href", "http://localhost:8081/api/tcc/compra.html?idProduto="+id);
 
 	$.ajax({
 		method: "GET",

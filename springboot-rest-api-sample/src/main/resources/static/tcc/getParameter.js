@@ -19,7 +19,7 @@ jQuery(document).ready(function() {
 
 	});
 
-
+	$("#nameUser").text("Olá, " + localStorage.getItem("user"));
 
 
 });

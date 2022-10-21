@@ -52,18 +52,17 @@
 							achou = true;
 							
 								console.log(response[i]);
-								
-								//Guardar no Local Storage dados do Uuario Logado
 								localStorage.setItem("user",response[i].name);
 								localStorage.setItem("idUser",response[i].id);
 								localStorage.setItem("admin",response[i].admin);
+							if(response[i].admin == 1 && response[i].emailDescription == true  ){
 								
-							if(response[i].admin == 1){
-							//	window.location.href = "http://localhost:8081/api/cadastro/Produto.html";
+								window.location.href = "http://localhost:8081/api/cadastro/Produto.html";
+								
 								
 							}else{
 				
-								//window.location.href = "http://localhost:8081/api/tcc/home.html";	
+								window.location.href = "http://localhost:8081/api/tcc/home.html";
 					
 								}
 							// se admin ==1   location para o cadastro

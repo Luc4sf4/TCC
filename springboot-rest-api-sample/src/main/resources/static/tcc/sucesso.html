@@ -1,40 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Categorias</title>
+<title>Produto</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Lato">
+
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="home.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="produto.css" media="screen">
 <script src="https://code.jquery.com/jquery-3.6.0.js"
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
-<script src="./getCategoria.js"></script>
+
 <script src="./getParameter.js"></script>
+
+
 <style>
-html, body, h1, h2, h3, h4 {
-	font-family: "Lato", sans-serif
-}
-
-.mySlides {
-	display: none
-}
-
-.w3-tag, .fa {
-	cursor: pointer
-}
-
-.w3-tag {
-	height: 15px;
-	width: 15px;
-	padding: 0;
-	margin-top: 6px;
-	font-size: 12px
-}
 #nameUser{
     float: right;
     color: white;
@@ -44,9 +26,8 @@ html, body, h1, h2, h3, h4 {
 }
    
 </style>
-
 </head>
-<body style="background-color: black">
+<body>
 
 
 
@@ -57,28 +38,36 @@ html, body, h1, h2, h3, h4 {
 				href="javascript:void(0)" onclick="myFunction()"
 				title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> <a
 				href="home.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-			<a href="Login.html"
+			<a href="login.html"
 				class="w3-button w3-black w3-padding-large w3-large">Login</a> <a
 				href="categorias.html"
-				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Categoria</a>
-
-				<a href="historico.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Minhas Compras</a>
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Categorias</a>
+			<a href="historico.html"
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">Minhas
+				Compras</a>
 				 <div id="nameUser"> </div>
 
 		</div>
 	</div>
 
 	<!-- Content -->
-	<div class="w3-content" style="max-width: 1500px; margin-top: 60px; margin-bottom: 60px">
 
-
-		<div class="w3-black" id="tour">
-			<div class="w3-container w3-content" style="max-width: 1000px">
-
-				<div class="w3-row-padding w3-padding-32" style="margin: 0 -16px"
-					id="categoria_list"></div>
-			</div>
+	<div class="w3-container w3-content w3-center w3-padding-64"
+		style="width: 100%" id="band">
+		<h1>Compra Efetuada</h1>
+		
+		<h4><div id="nameUser2"> </div></h4>
+		<div class="textoSucesso">
+		Recebemos seu pedido. Quando nosso sistema detectar o pagamento, o pacote será enviado para sua residencia. O Prazo para chegada do produto em sua casa é de apenas 3 dias úteis.
+		
+		</div><br>
+		
+		
+				<div class="textoSucesso">
+		Parabéns pela Compra!
 		</div>
+	
+
 	</div>
 
 
@@ -86,6 +75,9 @@ html, body, h1, h2, h3, h4 {
 	<br></br>
 
 	<!-- Footer -->
+<script>$("#nameUser").text("Parabéns, " + localStorage.getItem("user"));</script>
+<script>$("#nameUser2").text("Parabéns, " + localStorage.getItem("user"));</script>
+
 	<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
 		<h4 id="footer"></h4>
 		<div class="w3-xlarge w3-section" style="display: none;">
@@ -97,6 +89,7 @@ html, body, h1, h2, h3, h4 {
 				class="fa fa-linkedin w3-hover-opacity"></i>
 		</div>
 	</footer>
-	<script src="./getParameter.js"></script>
+
+
 </body>
 </html>
