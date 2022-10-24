@@ -1,91 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastre-se</title>
-    <link rel="stylesheet" href="cadastro.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 	crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastre-se</title>
+<link rel="stylesheet" href="cadastro.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
 
 </head>
 <body>
-    <main>
-        <h1>Crie Sua Conta</h1>
-       
-        <form action="">
-            <label for="name">
-                <span>Nome</span>
-                <input type="text" id="name" name="name">
-            </label>
+	<main>
+		<h1>Crie Sua Conta</h1>
 
-            <label for="email">
-                <span>E-mail</span>
-                <input type="email" id="email" name="email">
-            </label>
+		<form action="">
+			<label for="name"> <span>Nome</span> <input type="text"
+				id="name" name="name">
+			</label> <label for="email"> <span>E-mail</span> <input type="email"
+				id="email" name="email">
+			</label> <label for="password"> <span>Senha</span> <input
+				type="password" id="password" name="password">
+			</label> <label for="password"> <span>Repita sua senha</span> <input
+				type="password" id="password2" name="password">
+			</label> <input type="button" value="Sign Up" id="button"
+				onclick="saveUser()"></input>
 
-            <label for="password">
-                <span>Senha</span>
-                <input type="password" id="password" name="password">
-            </label>
-			
-            <label for="password">
-                <span>Repita sua senha</span>
-                <input type="password" id="password2" name="password">
-            </label>
+		</form>
+	</main>
+	<section class="images">
 
-        <input type="button" value="Sign Up" id="button" onclick = "saveUser()"></input>
+		<div class="circle"></div>
+	</section>
+	<script type="text/javascript">
+		function saveUser() {
 
-        </form>
-    </main>
-    <section class="images">
+			var name = $("#name").val();
 
-        <div class="circle"></div>
-    </section>
-    <script type="text/javascript">
-    
-    function saveUser() {
-    	
-    	
-    	
-    	var name = $("#name").val();
-    	
-    	var email = $("#email").val();
-    	
-    	var password = $("#password").val();
-    	
-    	var password2 = $("#password2").val();
-  		
-    		if(password2 == password){
-    		$.ajax({
- 				method: "POST",
- 				url: "user",
- 				data : JSON.stringify({
- 					
- 					name:name,
- 					emailDescription:email,
- 					passwordDescription: password ,
- 				}),
- 				contentType: "application/json; charset= utf-8",
- 				success: function (response) {
- 					
- 					$("#name").val(response.name);
- 					alert ("salvou com sucesso");
- 					}
- 					
- 			}).fail(function(xhr, status, errorThrown){
-					alert ("Erro ao salvar " + xhr.reponseText); 				
- 				
- 			})
-    	  } else {
-    		  
-    		  aler("As senhas não são iguais ");
-    		  
-    	  }
-    	} 
-    	
-    
-    
-    </script>
+			var email = $("#email").val();
+
+			var password = $("#password").val();
+
+			var password2 = $("#password2").val();
+
+			if (password2 == password) {
+				$.ajax(
+								{
+									method : "POST",
+									url : "http://localhost:8081/api/cadastro/user",
+									data : JSON.stringify({
+
+										name : name,
+										emailDescription : email,
+										passwordDescription : password,
+									}),
+									contentType : "application/json; charset= utf-8",
+									success : function(response) {
+										console.log(response);
+										localStorage.setItem("user",	response.name);
+										localStorage.setItem("idUser",	response.id);
+										localStorage.setItem("admin",	null);
+										window.location.href = "http://localhost:8081/api/tcc/home.html";
+									}
+
+								}).fail(function(xhr, status, errorThrown) {
+							alert("Erro ao salvar " + xhr.reponseText);
+
+						})
+			} else {
+
+				aler("As senhas não são iguais ");
+
+			}
+		}
+	</script>
 </body>
 </html>

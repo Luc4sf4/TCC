@@ -19,8 +19,15 @@ jQuery(document).ready(function() {
 
 	});
 
-	$("#nameUser").text("Olá, " + localStorage.getItem("user"));
-
+	if (localStorage.getItem("user")) {
+		document.getElementById("cadastroTop").style.display = "none";
+		document.getElementById("loginTop").style.display = "none";
+		$("#nameUser").text("Olá, " + localStorage.getItem("user"));
+	} else {
+		document.getElementById("cadastroTop").style.display = "block";
+		document.getElementById("loginTop").style.display = "block";
+		$("#nameUser").text(" ") ;
+	}
 
 });
 
