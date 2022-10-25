@@ -1,0 +1,666 @@
+ 
+@media only screen and (max-width: 2000px){
+    
+
+    html, body {
+
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+       
+    }
+
+    html, body, header, section{
+        display: block;
+    }
+
+
+     /* body, .fundo {
+
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        z-index: 0;
+        
+        background-color: #ffffff;
+    } */
+        
+    /* .container {
+
+        width: 90%;
+        height: 100%;
+        left: 0%;
+        top: 0%;
+        z-index: 1;
+
+        background-color: #ffffff;
+    } */
+    
+
+    /* Retangulo da home*/
+
+    #retangulo {
+
+        position: absolute;
+        width: 101%;
+        height: 8em;
+        left: 0%;
+        top: 0%;
+        z-index: 10;
+
+        background: #262626;
+    }
+
+    /* Menu */
+
+    #menu-titulo h3 {
+
+        position: absolute;
+        width: 10em;
+        height: 10em;
+        right: -5em;
+        top: 30px;
+
+        font-family: 'Inder';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 20px;
+        z-index: 11;
+
+
+        color: #FFFFFF;
+
+        
+    }
+
+    #menu-1 [src="imagens/menu.png"] {
+
+        position: absolute;
+        width: 2.5em;
+        height: 2.5em;
+        right: 2.9em;
+        top: 3.3em;
+        z-index: 10;
+
+        background: url(menu.png);
+
+    }
+
+    /* pesquisa */
+
+    #pesquisa h3 {
+
+        position: absolute;
+        width: 10em;
+        height: 10em;
+        right: 13.9em;
+        top: 31px;
+
+        font-family: 'Inder';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 20px;
+        z-index: 13;
+
+        color: #262626;
+        
+    }
+
+    #pesquisa [src="imagens/pesquisa.png"] {
+
+        position: absolute;
+        width: 2.5em;
+        height: 2.5em;
+        right: 32.7em;
+        top: 3.3em;
+        z-index: 11;
+
+        background: url(menu.png);
+
+    }
+
+    #retangulo-pesquisa {
+
+        position: absolute;
+        width: 30%;
+        height: 2.5em;
+        right: 36em;
+        top: 3.3em;
+        border-radius: 10em;
+        z-index: 12;
+
+        background-color: #FFFFFF;
+    }
+
+    /* perfil */
+
+    #perfil h3 {
+
+        position: absolute;
+        width: 10em;
+        height: 10em;
+        right: 2em;
+        top: 30px;
+
+        font-family: 'Inder';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 20px;
+        z-index: 12;
+
+
+        color: #ffffff;
+        
+    }
+
+    #perfil [src="imagens/perfil.png"] {
+
+        position: absolute;
+        width: 2.5em;
+        height: 2.5em;
+        right: 15.6em;
+        top: 3.3em;
+        z-index: 10;
+
+        background: url(menu.png);
+
+    }
+
+    
+    #retangulo1{
+
+        position: absolute;
+        width: 98%;
+        height: 7.625em;
+        left: 2%;
+        top: 14em;
+        z-index: 10;
+        border-radius: 10em;
+
+        background: #000000;
+
+    }
+
+    #circulo-da-reta1{
+
+        position: absolute;
+        width: 9em;
+        height: 7.625em;
+        left: 1%;
+        top: 14em;
+        z-index: 11;
+        border-radius: 50%;
+
+        background: #FFC13C;
+
+    }
+
+    #titulo-destaque h2{
+
+        position: absolute;
+        width: 726px;
+        height: 76px;
+        left: 3.5em;
+        top: 210px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 61px;
+        z-index: 11;
+
+        color: #D2922A;
+
+    }
+
+    #principal1 [src="imagens/festa-anirvesario.jpeg"] {
+
+        position: absolute;
+        width: 101%;
+        height: 35.25em;
+        top: 24em;
+        left: 0%;
+        background: url(festa-anirvesario.jpeg);
+        z-index: 10;
+
+    }
+
+    /* retangulo 2 / topicos mais procurados */
+
+    #retangulo2{
+
+        position: absolute;
+        width: 98%;
+        height: 7.625em;
+        left: 2%;
+        top: 64.5em;
+        border-radius: 10em;
+        z-index: 10;
+
+        background: #000000;
+
+    }
+
+    #circulo-da-reta2{
+
+        position: absolute;
+        width: 9em;
+        height: 7.625em;
+        left: 1%;
+        top: 64.5em;
+        z-index: 11;
+        border-radius: 50%;
+
+        background: #FFC13C;
+
+    }
+
+    #topicos-mais h2{
+
+        position: absolute;
+        width: 760px;
+        height: 76px;
+        left: 3.5em;
+        top: 1015px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 61px;
+        z-index: 10;
+
+        color: #D2922A;
+    }
+
+    /* /////// topicos /////// */
+
+    /* Buffet - retangulo 01 / circulo 1*/
+
+    #retangulo01{
+
+        position: absolute;
+        width: 10.75em;
+        height: 4.375em;
+        left: 1em;
+        top: 90em;
+        border-radius: 1.5em;
+        z-index: 10;
+
+        background: #FBC353;
+    }
+
+    #circulo1 [src="imagens/buffet.jpg"] {
+
+        position: absolute;
+        width: 10.45em;
+        height: 11em;
+        left: 1em;
+        top: 81em;
+        border-radius: 50%;
+        z-index: 9;
+        
+        background: url(buffet.jpg);
+    }
+
+    /* Decorações - retangulo 02 / circulo 2 */
+
+    #retangulo02{
+
+        position: absolute;
+        width: 10.45em;
+        height: 4.375em;
+        left: 15em;
+        top: 90em;
+        border-radius: 1.5em;
+        z-index: 10;
+
+        background: #FBC353;
+    }
+
+    #circulo2 [src="imagens/decoracoes.jpg"] {
+
+        position: absolute;
+        width: 10.45em;
+        height: 11em;
+        left: 15em;
+        top: 81em;
+        border-radius: 50%;
+        z-index: 9;
+        
+        background: url(decoracoes.jpg);}
+
+    /* atrações - retangulo 03 / circulo 3 */
+
+    #retangulo03 {
+
+        position: absolute;
+        width: 10.45em;
+        height: 4.375em;
+        left: 29em;
+        top: 90em;
+        border-radius: 1.5em;
+        z-index: 10;
+
+        background: #FBC353;
+    }
+
+    #circulo3 [src="imagens/atracoes.jpg"] {
+        
+        position: absolute;
+        width: 10.45em;
+        height: 11em;
+        left: 29em;
+        top: 81em;
+        border-radius: 50%;
+        z-index: 9;
+        
+        background: url(atracoes.jpg);
+    }
+
+     /* Espaços - retangulo 04 / circulo 4*/
+
+    #retangulo04 {
+
+        position: absolute;
+        width: 10.45em;
+        height: 4.375em;
+        left: 43em;
+        top: 90em;
+        border-radius: 1.5em;
+        z-index: 10;
+
+        background: #FBC353;
+    }
+
+    #circulo4 [src="imagens/espaco.jpg"] {
+        
+        position: absolute;
+        width: 10.45em;
+        height: 11em;
+        left: 43em;
+        top: 81em;
+        border-radius: 50%;
+        z-index: 9;
+        
+        background: url(espaco.jpg);
+    }
+
+    /* Festa empresarial - retangulo 05 / circulo 5 */
+
+    #retangulo05 {
+
+        position: absolute;
+        width: 10.45em;
+        height: 4.375em;
+        left: 57em;
+        top: 90em;
+        border-radius: 1.5em;
+        z-index: 10;
+        
+
+        background: #FBC353;
+    }
+
+    #circulo5 [src="imagens/festa-da-empresa.jpg"] {
+        
+        position: absolute;
+        width: 10.45em;
+        height: 11em;
+        left: 57em;
+        top: 81em;
+        border-radius: 50%;
+        z-index: 9;
+        
+        background: url(festa-da-empresa.jpg);
+    }
+
+    /* Infantil - retangulo 06 / circulo 6 */
+
+    #retangulo06 {
+
+        position: absolute;
+        width: 10.45em;
+        height: 4.375em;
+        left: 71em;
+        top: 90em;
+        border-radius: 1.5em;
+        z-index: 10;
+
+        background: #FBC353;
+    }
+
+    #circulo6 [src="imagens/festa-infantil.jpg"] {
+        
+        position: absolute;
+        width: 10.45em;
+        height: 11em;
+        left: 71em;
+        top: 81em;
+        border-radius: 50%;
+        z-index: 9;
+        
+        background: url(festa-infantil.jpg);
+    }
+
+    /* Rodapé ////////////////////// */
+
+    #retangulo-fundo{
+
+        position: absolute;
+        width: 101%;
+        height: 57em;
+        left: 0%;
+        top: 102em;
+        z-index: 9;
+
+        background: #87632D;
+    }
+
+    /* Titulo - "Fale conosco" */
+
+    #retangulo5{
+
+        position: absolute;
+        width: 98%;
+        height: 5.6875em;
+        left: 2%;
+        top: 105em;
+        border-radius: 10em;
+        z-index: 10;
+
+        background: #000000;
+    }
+
+    #circulo-da-reta3{
+
+        position: absolute;
+        width: 7em;
+        height: 5.6875em;
+        left: 1%;
+        top: 105em;
+        z-index: 11;
+        border-radius: 50%;
+
+        background: #FFC13C;
+
+    }
+
+    #fale-conosco h2{
+
+        position: absolute;
+        width: 32.4375em;
+        height: 4.8125em;
+        left: 3em;
+        top: 1650px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500px;
+        font-size: 50px;
+        line-height: 61px;
+        z-index: 11;
+
+        color: #D2922A;
+
+    }
+
+    /* WhatsApp */
+
+    #whatsapp [src="imagens/whatsapp-33.png"]{
+
+        position: absolute;
+        width: 7.75em;
+        height: 7.375em;
+        left: 1em;
+        top: 114em;
+        z-index: 10;
+
+        background: url(WhatsApp.png);
+
+    }
+
+    #whatsapp h5{
+
+        position: absolute;
+        width: 440px;
+        height: 70px;
+        left: 4em;
+        top: 1785px;
+
+        font-family: 'Inder';
+        font-style: normal;
+        font-weight: 400px;
+        font-size: 45px;
+        line-height: 56px;
+        z-index: 10;
+
+        color: #FFFFFF;
+    }
+
+    /* Facebook */
+
+    #facebook [src="imagens/facebook-logo-3-1.png"]{
+
+        position: absolute;
+        width: 7.75em;
+        height: 7.375em;
+        left: 1em;
+        top: 123em;
+        z-index: 10;
+
+        background: url(WhatsApp.png);
+    }
+
+    #facebook h5 {
+
+        position: absolute;
+        width: 440px;
+        height: 70px;
+        left: 4em;
+        top: 1930px;
+
+        font-family: 'Inder';
+        font-style: normal;
+        font-weight: 400px;
+        font-size: 45px;
+        line-height: 56px;
+        z-index: 10;
+
+        color: #FFFFFF;
+    }
+
+    /* Instagram */
+
+    #instagram [src="imagens/Instagram_icon.png.webp"]{
+
+        position: absolute;
+        width: 7.75em;
+        height: 7.375em;
+        left: 1em;
+        top: 132em;
+        z-index: 10;
+
+        background: url(Instagram_icon);
+    }
+
+    #instagram h5 {
+
+        position: absolute;
+        width: 440px;
+        height: 70px;
+        left: 4em;
+        top: 2075px;
+
+        font-family: 'Inder';
+        font-style: normal;
+        font-weight: 400px;
+        font-size: 45px;
+        line-height: 56px;
+        z-index: 10;
+
+        color: #FFFFFF;
+    }
+
+    /* Twitter */
+
+    #twitter [src="imagens/twitter-logo-3.png"]{
+
+        position: absolute;
+        width: 7.75em;
+        height: 7.375em;
+        left: 1em;
+        top: 141em;
+        z-index: 10;
+
+        background: url(twitter-logo-3);
+    }
+
+    #twitter h5 {
+
+        position: absolute;
+        width: 440px;
+        height: 70px;
+        left: 4em;
+        top: 2220px;
+        
+        font-family: 'Inder';
+        font-style: normal;
+        font-weight: 400px;
+        font-size: 45px;
+        line-height: 56px;
+        z-index: 10;
+        
+        color: #FFFFFF;
+        
+    }
+
+    /* E-mail */
+
+    #contato-email {
+
+        position: absolute;
+        width: 1346px;
+        height: 88px;
+        left: 0.625em;
+        top: 2370px;
+
+        font-family: 'Inder';
+        font-style: normal;
+        font-weight: 400px;
+        font-size: 40px;
+        line-height: 50px;
+        z-index: 10;
+
+        color: #FFFFFF;
+
+    }
+
+}
+
+    
